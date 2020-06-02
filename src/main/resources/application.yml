@@ -1,0 +1,42 @@
+#配置项目名
+spring:
+  application:
+    admin:
+      enabled: true
+    name: GoodsManager
+  security:
+    user:
+      name: admin
+      password: admin123
+  datasource:
+    url:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: FSmElsXuj3ls8Fq
+    hikari:
+      catalog: GoodsDB
+  devtools:
+    restart:
+      enabled: true
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2008Dialect
+        format_sql: true
+    database: sql_server
+    show-sql: true
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+    rest:
+      enable-enum-translation: true
+
+server:
+  port: 9527
+
