@@ -9,7 +9,7 @@ spring:
       name: admin
       password: admin123
   datasource:
-    url:
+    url: jdbc:sqlserver://123.129.217.172:1433;databaseName=GoodsDB
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     username: sa
     password: FSmElsXuj3ls8Fq
