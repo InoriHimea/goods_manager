@@ -25,4 +25,9 @@ public class CategoriesServiceImpl implements CategoriesService {
     public CategoriesEntity save(CategoriesEntity category) {
         return categoriesRepository.saveAndFlush(category);
     }
+
+    @Override
+    public CategoriesEntity update(CategoriesEntity category) {
+        return categoriesRepository.saveAndFlush(category);
+    }
 }

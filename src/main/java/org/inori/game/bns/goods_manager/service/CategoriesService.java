@@ -9,4 +9,6 @@ public interface CategoriesService {
     List<CategoriesEntity> findByParentCategoryId(Short id);
 
     CategoriesEntity save(CategoriesEntity category);
+
+    CategoriesEntity update(CategoriesEntity category);
 }

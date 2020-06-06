@@ -4,9 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.inori.game.bns.goods_manager.entity.CategoriesEntity;
 import org.inori.game.bns.goods_manager.service.CategoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
@@ -57,8 +55,20 @@ public class CategoriesController {
      * 添加一个新的分类
      * @return
      */
+    @PostMapping("/add/one")
     public Mono<Boolean> addOneCategory(CategoriesEntity category) {
         log.debug("添加一个分类 => {}", category);
         return Mono.just(categoriesService.save(category) != null);
+    }
+
+    /**
+     * 更新一个分类，需要对用内容
+     * @param category
+     * @return
+     */
+    @PutMapping("/update/one")
+    public Mono<Boolean> updateOneCategory(CategoriesEntity category) {
+        log.debug("更新一个分类 => {}", category);
+        return Mono.just(categoriesService.update(category) != null);
     }
 }
