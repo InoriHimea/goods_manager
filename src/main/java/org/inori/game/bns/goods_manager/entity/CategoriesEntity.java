@@ -2,6 +2,8 @@ package org.inori.game.bns.goods_manager.entity;
 
 import lombok.*;
 import lombok.experimental.Tolerate;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.inori.game.bns.goods_manager.converter.LanguageCodeConverter;
 
 import javax.persistence.*;
@@ -14,6 +16,8 @@ import static javax.persistence.ConstraintMode.CONSTRAINT;
 @Builder
 @Entity
 @Table(name = "Categories", schema = "dbo", catalog = "GoodsDb")
+@DynamicInsert
+@DynamicUpdate
 public class CategoriesEntity {
     @Tolerate
     public CategoriesEntity(){}

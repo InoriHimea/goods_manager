@@ -15,7 +15,7 @@ import java.util.Objects;
 public class CategoryDisplayEntityPK implements Serializable {
     @Column(name = "CategoryId")@Id
     private short categoryId;
-    @Id@Basic@Column(name = "LanguageCode")
+    /*@Id*/@Basic@Column(name = "LanguageCode")
     @Convert(converter = LanguageCodeConverter.class)
     private LanguageCode languageCode;
 }

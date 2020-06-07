@@ -1,13 +1,13 @@
 package org.inori.game.bns.goods_manager.enums;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 
 @Getter
 @AllArgsConstructor
-@ToString
 //@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum LanguageCode {
     DEFAULT(0, "默认语言"),
@@ -26,4 +26,11 @@ public enum LanguageCode {
 
     private int key;
     private String value;
+
+    @JsonValue
+    @Override
+    public String toString() {
+        //return this.getValue();
+        return this.name();
+    }
 }
