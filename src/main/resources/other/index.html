@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<html>
+    <head>
+        <title>GoodsSrv Test - Select</title>
+        <link rel="stylesheet" type="text/css" href="../Web/Sts/default.css"/>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Get Game Categories</legend>
+            <form action="get_game_categories">
+                GameCode : <input type="text" name="GameCode"/><br/>
+                LanguageCode : <input type="text" name="LanguageCode"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Item</legend>
+            <form action="get_item">
+                ItemId : <input type="text" name="ItemId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Goods</legend>
+            <form action="get_goods">
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                LanguageCode : <input type="text" name="LanguageCode"/><br/>
+                IsCacheMode: <input type="text" name="IsCacheMode"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Goods Name</legend>
+            <form action="get_goods_name">
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Goods Items</legend>
+            <form action="list_goods_items">
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Game Goods By Category ID</legend>
+            <form action="get_game_goods_by_category_id">
+                CategoryId : <input type="text" name="CategoryId"/><br/>
+                LanguageCode : <input type="text" name="LanguageCode"/><br/>
+                CurrencyGroupId : <input type="text" name="CurrencyGroupId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Game Goods By Goods ID</legend>
+            <form action="get_game_goods_by_goods_id">
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                LanguageCode : <input type="text" name="LanguageCode"/><br/>
+                CurrencyGroupId : <input type="text" name="CurrencyGroupId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Goods Price</legend>
+            <form action="get_goods_price">
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                CurrencyGroupId : <input type="text" name="CurrencyGroupId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Revision</legend>
+            <form action="get_revision">
+                CategoryId : <input type="text" name="CategoryId"/><br/>
+                IsCategoryRevision : <input type="text" name="IsCategoryRevision"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Max Category ID</legend>
+            <form action="get_max_category_id">
+                CategoryIdFrom : <input type="text" name="CategoryIdFrom"/><br/>
+                CategoryIdTo : <input type="text" name="CategoryIdTo"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Max Item ID</legend>
+            <form action="get_max_item_id">
+                ItemIdFrom : <input type="text" name="ItemIdFrom"/><br/>
+                ItemIdTo : <input type="text" name="ItemIdTo"/><br/>
+                IsBlankId : <input type="text" name="IsBlankId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Max Goods ID</legend>
+            <form action="get_max_goods_id">
+                GoodsIdFrom : <input type="text" name="GoodsIdFrom"/><br/>
+                GoodsIdTo : <input type="text" name="GoodsIdTo"/><br/>
+                IsBlankId : <input type="text" name="IsBlankId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Goods Info</legend>
+            <form action="get_goods_info">
+                GameCode : <input type="text" name="GameCode"/><br/>
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                ItemId : <input type="text" name="ItemId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Categories</legend>
+            <form action="list_categories">
+                GameCode : <input type="text" name="GameCode"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Category Displays</legend>
+            <form action="list_category_displays">
+                CategoryId : <input type="text" name="CategoryId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Items</legend>
+            <form action="list_items">
+                ItemIdFrom : <input type="text" name="ItemIdFrom"/><br/>
+                ItemIdTo : <input type="text" name="ItemIdTo"/><br/>
+                GameItemKey : <input type="text" name="GameItemKey"/><br/>
+                ItemAppGroupCode : <input type="text" name="ItemAppGroupCode"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Item Displays</legend>
+            <form action="list_item_displays">
+                ItemId : <input type="text" name="ItemId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Goods(ItemId)</legend>
+            <form action="list_goods_by_item_id">
+                ItemId : <input type="text" name="ItemId"/><br/>
+                LanguageCode : <input type="text" name="LanguageCode"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Goods(CategoryId)</legend>
+            <form action="list_goods_by_category_id">
+                CategoryId : <input type="text" name="CategoryId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Goods(GoodsId)</legend>
+            <form action="list_goods_by_goods_id">
+                GoodsIdFrom : <input type="text" name="GoodsIdFrom"/><br/>
+                GoodsIdTo : <input type="text" name="GoodsIdTo"/><br/>
+                GameItemKey : <input type="text" name="GameItemKey"/><br/>
+                GoodsAppGroupCode : <input type="text" name="GoodsAppGroupCode"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Purchase Goods</legend>
+            <form action="list_purchase_goods" method="post">
+                XML : <textarea type="text" name="XML" cols="70" rows="20"><Request>
+    <CurrencyGroupId>1</CurrencyGroupId>
+    <Goods type="array">
+        <GoodsId>2</GoodsId>
+    </Goods>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Delivery Goods</legend>
+            <form action="list_delivery_goods" method="post">
+                XML : <textarea type="text" name="XML" cols="70" rows="20"><Request>
+    <Goods type="array">
+        <GoodsId>2</GoodsId>
+    </Goods>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Refund Goods</legend>
+            <form action="list_refund_goods" method="post">
+                XML : <textarea type="text" name="XML" cols="70" rows="20"><Request>
+    <Goods type="array">
+        <GoodsId>2</GoodsId>
+    </Goods>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Goods Displays</legend>
+            <form action="list_goods_displays">
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Goods Infos</legend>
+            <form action="list_goods_infos">
+                GameCode : <input type="text" name="GameCode"/><br/>
+                PageIndex : <input type="text" name="PageIndex"/><br/>
+                PageSize : <input type="text" name="PageSize"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Page Goods</legend>
+            <form action="page_goods">
+                GoodsIdFrom : <input type="text" name="GoodsIdFrom"/><br/>
+                GoodsIdTo : <input type="text" name="GoodsIdTo"/><br/>
+                GoodsName : <input type="text" name="GoodsName"/><br/>
+                GoodsAppGroupCode : <input type="text" name="GoodsAppGroupCode"/><br/>
+                SaleStatus : <input type="text" name="SaleStatus"/><br/>
+                IncludeDisplayName : <input type="text" name="IncludeDisplayName"/><br/>
+                PageIndex : <input type="text" name="PageIndex"/><br/>
+                PageSize : <input type="text" name="PageSize"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Page Items</legend>
+            <form action="page_items">
+                ItemIdFrom : <input type="text" name="ItemIdFrom"/><br/>
+                ItemIdTo : <input type="text" name="ItemIdTo"/><br/>
+                ItemName : <input type="text" name="ItemName"/><br/>
+                ItemAppGroupCode : <input type="text" name="ItemAppGroupCode"/><br/>
+                PageIndex : <input type="text" name="PageIndex"/><br/>
+                PageSize : <input type="text" name="PageSize"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Category</legend>
+            <form action="get_category">
+                CategoryId : <input type="text" name="CategoryId"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List CategoryIds</legend>
+            <form action="list_category_ids">
+                GameCode : <input type="text" name="GameCode"/><br/>
+                CategoryType : <input type="text" name="CategoryType" value="2"><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Ingame Goods</legend>
+            <form action="ingame_goods">
+                GameCode : <input type="text" name="GameCode"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Ingame Items</legend>
+            <form action="ingame_items">
+                GameCode : <input type="text" name="GameCode"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Page Search Goods</legend>
+            <form action="page_search_goods">
+                AppGroupCode : <input type="text" name="AppGroupCode" value="bns"/><br/>
+                LanguageCode : <input type="text" name="LanguageCode" value="1"/><br/>
+                CurrencyGroupId : <input type="text" name="CurrencyGroupId" value="4"/><br/>
+                GoodsName : <input type="text" name="GoodsName" value="흑호"/><br/>
+                PageIndex : <input type="text" name="PageIndex" value="1"/><br/>
+                PageSize : <input type="text" name="PageSize" value="10"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>List Game Goods</legend>
+            <form action="list_game_goods">
+                GoodsId : <input type="text" name="GoodsId" value="201697"/><br/>
+                LanguageCode : <input type="text" name="LanguageCode" value="1"/><br/>
+                CurrencyGroupId : <input type="text" name="CurrencyGroupId" value="4"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Check New Goods</legend>
+            <form action="check_new_goods">
+                AppGroupCode : <input type="text" name="AppGroupCode" value="bns"/><br/>
+                CurrentLoginTime : <input type="text" name="CurrentLoginTime" value="2015-11-28T19:00:00+09:00"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Sale Goods</legend>
+            <form action="get_sale_goods">
+                AppGroupCode   : <input type="text" name="AppGroupCode" value="bns"/><br/>
+                LanguageCode   : <input type="text" name="LanguageCode" value="1"/><br/>
+                IsRevisionOnly : <input type="text" name="IsRevisionOnly" value="0"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Get Goods Revision</legend>
+            <form action="get_goods_revision">
+                AppGroupCode   : <input type="text" name="AppGroupCode" value="bns"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+    </body>
+</html>

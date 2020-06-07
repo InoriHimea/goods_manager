@@ -1,0 +1,1356 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<html>
+    <head>
+        <title>GoodsSrv Test - Core</title>
+        <link rel="stylesheet" type="text/css" href="../Web/Sts/default.css"/>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Add Category</legend>
+            <form action="add_category" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="22"><Request>
+    <CategoryId>7</CategoryId>
+    <CategoryName>Console Add Category</CategoryName>
+    <AppGroupCode>bns</AppGroupCode>
+    <IsDisplayable>1</IsDisplayable>
+    <DisplayOrder>3</DisplayOrder>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <CurrencyGroupId>17</CurrencyGroupId>
+    <ParentCategoryId>4</ParentCategoryId>
+    <CategoryData>{"CategoryType":["01"]}</CategoryData>
+    <CategoryDisplays type="array">
+        <CategoryDisplay>
+            <LanguageCode>1</LanguageCode>
+            <CategoryDisplayName>Console Add Category Display Name 1</CategoryDisplayName>
+            <CategoryDisplayDescription>Console Add Category Display Description 1</CategoryDisplayDescription>
+        </CategoryDisplay>
+        <CategoryDisplay>
+            <LanguageCode>2</LanguageCode>
+            <CategoryDisplayName>Console Add Category Display Name 2</CategoryDisplayName>
+            <CategoryDisplayDescription>Console Add Category Display Description 2</CategoryDisplayDescription>
+        </CategoryDisplay>
+    </CategoryDisplays>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(Charge Item)</legend>
+            <form action="add_item_charge" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="25"><Request>
+    <ItemId>14</ItemId>
+    <ItemName>Console Charge Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>1</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>1000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 충전 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Console Charge Item Display Name 1</ItemDisplayName>
+            <ItemDisplayDescription>Console Charge Item Display Description 1</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Console Charge Item Display Name 2</ItemDisplayName>
+            <ItemDisplayDescription>Console Charge Item Display Description 2</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <ChargeItem>
+        <CurrencyId>2</CurrencyId>
+    </ChargeItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(Time Item)</legend>
+            <form action="add_item_time" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="37"><Request>
+    <ItemId>15</ItemId>
+    <ItemName>Console Time Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>2</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>20000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 시간 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Console Time Item Display Name 1</ItemDisplayName>
+            <ItemDisplayDescription>Console Time Item Display Description 1</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Console Time Item Display Name 2</ItemDisplayName>
+            <ItemDisplayDescription>Console Time Item Display Description 2</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <TimeItem>
+        <DeductionStartType>1</DeductionStartType>
+        <TimeItemType>2</TimeItemType>
+        <DeductionUnitType>2</DeductionUnitType>
+        <EffectiveDurationUnitType>1</EffectiveDurationUnitType>
+        <EffectiveDuration>10</EffectiveDuration>
+        <ChargeTimePerSecond>15</ChargeTimePerSecond>
+        <EffectiveTimeMask>RWZmZWN0aXZlVGltZU1hc2s=</EffectiveTimeMask>
+        <DiscountTimeMask>RGlzY291bnRUaW1lTWFzaw==</DiscountTimeMask>
+        <BasicPricePerSecond>200</BasicPricePerSecond>
+        <BasicPricePerHour>2000</BasicPricePerHour>
+        <BasicPricePerDay>20000</BasicPricePerDay>
+        <BasicPricePerMinute>200</BasicPricePerMinute>
+        <BasicPriceMask>1010</BasicPriceMask>
+    </TimeItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(Game Item)</legend>
+            <form action="add_item_game" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="26"><Request>
+    <ItemId>16</ItemId>
+    <ItemName>Console Game Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>3</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>5000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 게임 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Console Game Item Display Name 1</ItemDisplayName>
+            <ItemDisplayDescription>Console Game Item Display Description 1</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Console Game Item Display Name 2</ItemDisplayName>
+            <ItemDisplayDescription>Console Game Item Display Description 2</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <GameItem>
+        <GameItemKey>/////w==</GameItemKey>
+        <GameItemData>//////////8=</GameItemData>
+    </GameItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(Additional Service Item)</legend>
+            <form action="add_item_additional_service" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="27"><Request>
+    <ItemId>17</ItemId>
+    <ItemName>Console Additional Service Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>4</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>8000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 부가 서비스 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Console Additional Service Item Display Name 1</ItemDisplayName>
+            <ItemDisplayDescription>Console Additional Service Item Display Description 1</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Console Additional Service Item Display Name 2</ItemDisplayName>
+            <ItemDisplayDescription>Console Additional Service Item Display Description 2</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <AdditionalServiceItem>
+        <AdditionalServiceType>17</AdditionalServiceType>
+    </AdditionalServiceItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(Coupon Item)</legend>
+            <form action="add_item_coupon" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="25"><Request>
+    <ItemId>18</ItemId>
+    <ItemName>Console Coupon Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>11</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>5000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 쿠폰 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Console Coupon Item Display Name 1</ItemDisplayName>
+            <ItemDisplayDescription>Console Coupon Item Display Description 1</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Console Coupon Item Display Name 2</ItemDisplayName>
+            <ItemDisplayDescription>Console Coupon Item Display Description 2</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <CouponItem>
+        <IssueId>1</IssueId>
+    </CouponItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(Grade Item)</legend>
+            <form action="add_item_grade" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="33"><Request>
+    <ItemId>19</ItemId>
+    <ItemName>Console Grade Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>12</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>10000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 등급 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Web Console Grade Item</ItemDisplayName>
+            <ItemDisplayDescription>Web Console Grade Item Description</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Web Console Grade Item</ItemDisplayName>
+            <ItemDisplayDescription>Web Console Grade Item Description</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <SubscriptionItem>
+        <DeductionStartType>1</DeductionStartType>
+        <DeductionUnitType>4</DeductionUnitType>
+        <EffectiveDurationUnitType>4</EffectiveDurationUnitType>
+        <EffectiveDuration>90</EffectiveDuration>
+        <BasicPricePerSecond>0</BasicPricePerSecond>
+        <BasicPricePerHour>0</BasicPricePerHour>
+        <BasicPricePerDay>0</BasicPricePerDay>
+        <SubscriptionItemKey>1</SubscriptionItemKey>
+        <SubscriptionScore>100</SubscriptionScore>
+        <GameGradeKey>10001</GameGradeKey>
+    </SubscriptionItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(Tag Item)</legend>
+            <form action="add_item_tag" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="25"><Request>
+    <ItemId>20</ItemId>
+    <ItemName>Console Tag Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>13</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>5000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 태그 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Console Tag Item Display Name 1</ItemDisplayName>
+            <ItemDisplayDescription>Console Tag Item Display Description 1</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Console Tag Item Display Name 2</ItemDisplayName>
+            <ItemDisplayDescription>Console Tag Item Display Description 2</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <GameItem>
+        <GameItemKey>13</GameItemKey>
+    </GameItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(IngameCoupon(CREDD) Item)</legend>
+            <form action="add_item_ingame_coupon" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="25"><Request>
+    <ItemId>21</ItemId>
+    <ItemName>Console CREDD Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>14</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>5000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 인게임 쿠폰(CREDD) 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Console Ingame Coupon Item Display Name 1</ItemDisplayName>
+            <ItemDisplayDescription>Console Ingame Coupon Item Display Description 1</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Console Ingame Coupon Item Display Name 2</ItemDisplayName>
+            <ItemDisplayDescription>Console Ingame Coupon Item Display Description 2</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <CouponItem>
+        <IssueId>14</IssueId>
+    </CouponItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(License Item)</legend>
+            <form action="add_item_license" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="33"><Request>
+    <ItemId>22</ItemId>
+    <ItemName>Console License Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>15</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>10000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 라이선스 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Web Console License Item</ItemDisplayName>
+            <ItemDisplayDescription>Web Console License Item Description</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Web Console License Item</ItemDisplayName>
+            <ItemDisplayDescription>Web Console License Item Description</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <SubscriptionItem>
+        <DeductionStartType>1</DeductionStartType>
+        <DeductionUnitType>4</DeductionUnitType>
+        <EffectiveDurationUnitType>4</EffectiveDurationUnitType>
+        <EffectiveDuration>90</EffectiveDuration>
+        <BasicPricePerSecond>0</BasicPricePerSecond>
+        <BasicPricePerHour>0</BasicPricePerHour>
+        <BasicPricePerDay>0</BasicPricePerDay>
+        <SubscriptionItemKey>1</SubscriptionItemKey>
+        <SubscriptionScore>100</SubscriptionScore>
+    </SubscriptionItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(Role Item)</legend>
+            <form action="add_item_role" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="26"><Request>
+    <ItemId>23</ItemId>
+    <ItemName>Console Role Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>16</ItemType>
+    <IsConsumable>0</IsConsumable>
+    <BasicPrice>0</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 역할 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Web Console Role Item</ItemDisplayName>
+            <ItemDisplayDescription>Web Console Role Item Description</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Web Console Role Item</ItemDisplayName>
+            <ItemDisplayDescription>Web Console Role Item Description</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <RoleItem>
+        <ItemAppGroupId>5</ItemAppGroupId>
+        <RoleId>2</RoleId>
+    </RoleItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(Gacha Charge Item)</legend>
+            <form action="add_item_gacha_charge" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="25"><Request>
+    <ItemId>24</ItemId>
+    <ItemName>Console Gacha Charge Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>17</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>1000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 가차 아이템</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Console Gacha Charge Item Display Name 1</ItemDisplayName>
+            <ItemDisplayDescription>Console Gacha Charge Item Display Description 1</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Console Gacha Charge Item Display Name 2</ItemDisplayName>
+            <ItemDisplayDescription>Console Gacha Charge Item Display Description 2</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <ChargeItem>
+        <CurrencyId>33</CurrencyId>
+    </ChargeItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Item(Grade Score Item)</legend>
+            <form action="add_item_grade_score" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="26"><Request>
+    <ItemId>25</ItemId>
+    <ItemName>Console Grade Score Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>18</ItemType>
+    <IsConsumable>0</IsConsumable>
+    <BasicPrice>1000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web에서 등록한 등급 점수</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>Console Grade Score Item Display Name 1</ItemDisplayName>
+            <ItemDisplayDescription>Console Grade Score Item Display Description 1</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <LanguageCode>2</LanguageCode>
+            <ItemDisplayName>Console Grade Score Item Display Name 2</ItemDisplayName>
+            <ItemDisplayDescription>Console Grade Score Item Display Description 2</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <SubscriptionItem>
+        <SubscriptionItemKey>1</SubscriptionItemKey>
+        <SubscriptionScore>100</SubscriptionScore>
+        <GameGradeKey>100001</GameGradeKey>
+    </SubscriptionItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Goods</legend>
+            <form action="add_goods" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="150"><Request>
+    <GoodsId>9</GoodsId>
+    <GoodsName>Console Web Add Goods</GoodsName>
+    <GoodsAppGroupCode>bns</GoodsAppGroupCode>
+    <GoodsType>1</GoodsType>
+    <DeliveryType>1</DeliveryType>
+    <SaleStatus>2</SaleStatus>
+    <EffectiveFrom>2012-12-01 00:00:00 +09:00</EffectiveFrom>
+    <EffectiveTo>9999-12-31 23:59:59 +09:00</EffectiveTo>
+    <SaleableQuantity>9000</SaleableQuantity>
+    <RefundUnitCode>1</RefundUnitCode>
+    <IsRefundable>1</IsRefundable>
+    <IsAvailableRecurringPayment>1</IsAvailableRecurringPayment>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <GoodsDescription>Console Web에서 등록한 상품 설명</GoodsDescription>
+    <GoodsData>AQABAAE=</GoodsData>
+    <ParentGoodsId>7</ParentGoodsId>
+    <GoodsPurchaseType>1</GoodsPurchaseType>
+    <GoodsPurchaseCheckMask>4</GoodsPurchaseCheckMask>
+    <GoodsSaleLimits type="array">
+        <GoodsSaleLimit>
+            <SaleLimitType>1</SaleLimitType>
+            <SaleLimitValue>50</SaleLimitValue>
+        </GoodsSaleLimit>
+    </GoodsSaleLimits>
+    <GoodsCategories type="array">
+        <GoodsCategory>
+            <CategoryId>3</CategoryId>
+            <DisplayOrder>5</DisplayOrder>
+        </GoodsCategory>
+        <GoodsCategory>
+            <CategoryId>7</CategoryId>
+            <DisplayOrder>1</DisplayOrder>
+        </GoodsCategory>
+    </GoodsCategories>
+    <GoodsDisplays type="array">
+        <GoodsDisplay>
+            <LanguageCode>1</LanguageCode>
+            <GoodsDisplayName>상품 진열 이름 1</GoodsDisplayName>
+            <GoodsDisplayDescription>상품 진열 설명 1</GoodsDisplayDescription>
+        </GoodsDisplay>
+        <GoodsDisplay>
+            <LanguageCode>2</LanguageCode>
+            <GoodsDisplayName>상품 진열 이름 2</GoodsDisplayName>
+            <GoodsDisplayDescription>상품 진열 설명 2</GoodsDisplayDescription>
+        </GoodsDisplay>
+    </GoodsDisplays>
+    <GoodsAccountGrades type="array">
+        <GoodsAccountGrade>
+            <AccountGradeId>1</AccountGradeId>
+        </GoodsAccountGrade>
+        <GoodsAccountGrade>
+            <AccountGradeId>2</AccountGradeId>
+        </GoodsAccountGrade>
+    </GoodsAccountGrades>
+    <GoodsBasicPrices type="array">
+        <GoodsBasicPrice>
+            <CurrencyGroupId>1</CurrencyGroupId>
+            <BasicSalePrice>29700</BasicSalePrice>
+            <RefundFee>297</RefundFee>
+        </GoodsBasicPrice>
+        <GoodsBasicPrice>
+            <CurrencyGroupId>2</CurrencyGroupId>
+            <BasicSalePrice>39700</BasicSalePrice>
+            <RefundFee>397</RefundFee>
+        </GoodsBasicPrice>
+    </GoodsBasicPrices>
+    <GoodsSalePricePolicies type="array">
+        <GoodsSalePricePolicy>
+            <CurrencyGroupId>1</CurrencyGroupId>
+            <PricePolicyType>1</PricePolicyType>
+            <EffectiveFrom>2012-12-01 00:00:00 +09:00</EffectiveFrom>
+            <EffectiveTo>2013-12-01 00:00:00 +09:00</EffectiveTo>
+            <SalePrice>29700</SalePrice>
+            <DiscountValueType>1</DiscountValueType>
+            <DiscountValue>500</DiscountValue>
+            <RewardCurrencyId>5</RewardCurrencyId>
+            <RewardValueType>1</RewardValueType>
+            <RewardValue>505</RewardValue>
+        </GoodsSalePricePolicy>
+        <GoodsSalePricePolicy>
+            <CurrencyGroupId>1</CurrencyGroupId>
+            <PricePolicyType>1</PricePolicyType>
+            <EffectiveFrom>2013-12-01 00:00:00 +09:00</EffectiveFrom>
+            <EffectiveTo>9999-12-31 23:59:59 +09:00</EffectiveTo>
+            <SalePrice>39700</SalePrice>
+            <DiscountValueType>1</DiscountValueType>
+            <DiscountValue>300</DiscountValue>
+            <RewardCurrencyId>5</RewardCurrencyId>
+            <RewardValueType>1</RewardValueType>
+            <RewardValue>305</RewardValue>
+        </GoodsSalePricePolicy>
+        <GoodsSalePricePolicy>
+            <CurrencyGroupId>2</CurrencyGroupId>
+            <PricePolicyType>1</PricePolicyType>
+            <EffectiveFrom>2012-12-01 00:00:00 +09:00</EffectiveFrom>
+            <EffectiveTo>9999-12-31 23:59:59 +09:00</EffectiveTo>
+            <SalePrice>49700</SalePrice>
+            <DiscountValueType>1</DiscountValueType>
+            <DiscountValue>400</DiscountValue>
+            <RewardCurrencyId>5</RewardCurrencyId>
+            <RewardValueType>1</RewardValueType>
+            <RewardValue>405</RewardValue>
+        </GoodsSalePricePolicy>
+    </GoodsSalePricePolicies>
+    <GoodsItems type="array">
+        <GoodsItem>
+            <ItemId>16</ItemId>
+            <ItemQuantity>10</ItemQuantity>
+            <ItemExpirationType>2</ItemExpirationType>
+            <ItemExpirationDuration>10</ItemExpirationDuration>
+            <ItemData>//8=</ItemData>
+            <DeliveryPriority>1</DeliveryPriority>
+            <LimitedGameServerMask>TGltaXRlZCBHYW1lIFNlcnZlciBNYXNr3</LimitedGameServerMask>
+            <GoodsItemBasicPrices type="array">
+                <GoodsItemBasicPrice>
+                    <CurrencyGroupId>1</CurrencyGroupId>
+                    <BasicSalePrice>20000</BasicSalePrice>
+                    <BasicRefundPrice>200</BasicRefundPrice>
+                    <BasicRefundPricePerSecond>20</BasicRefundPricePerSecond>
+                    <BasicRefundPricePerHour>200</BasicRefundPricePerHour>
+                    <BasicRefundPricePerDay>2000</BasicRefundPricePerDay>
+                </GoodsItemBasicPrice>
+                <GoodsItemBasicPrice>
+                    <CurrencyGroupId>2</CurrencyGroupId>
+                    <BasicSalePrice>30000</BasicSalePrice>
+                    <BasicRefundPrice>300</BasicRefundPrice>
+                    <BasicRefundPricePerSecond>30</BasicRefundPricePerSecond>
+                    <BasicRefundPricePerHour>300</BasicRefundPricePerHour>
+                    <BasicRefundPricePerDay>3000</BasicRefundPricePerDay>
+                </GoodsItemBasicPrice>
+            </GoodsItemBasicPrices>
+        </GoodsItem>
+        <GoodsItem>
+            <ItemId>17</ItemId>
+            <ItemQuantity>20</ItemQuantity>
+            <ItemExpirationType>1</ItemExpirationType>
+            <ItemExpireAt>2013-12-01 00:00:00 +09:00</ItemExpireAt>
+            <ItemData>//8=</ItemData>
+            <DeliveryPriority>1</DeliveryPriority>
+            <LimitedGameServerMask>TGltaXRlZCBHYW1lIFNlcnZlciBNYXNr3</LimitedGameServerMask>
+            <GoodsItemBasicPrices type="array">
+                <GoodsItemBasicPrice>
+                    <CurrencyGroupId>1</CurrencyGroupId>
+                    <BasicSalePrice>9700</BasicSalePrice>
+                    <BasicRefundPrice>97</BasicRefundPrice>
+                    <BasicRefundPricePerSecond>9</BasicRefundPricePerSecond>
+                    <BasicRefundPricePerHour>97</BasicRefundPricePerHour>
+                    <BasicRefundPricePerDay>970</BasicRefundPricePerDay>
+                </GoodsItemBasicPrice>
+                <GoodsItemBasicPrice>
+                    <CurrencyGroupId>2</CurrencyGroupId>
+                    <BasicSalePrice>8700</BasicSalePrice>
+                    <BasicRefundPrice>87</BasicRefundPrice>
+                    <BasicRefundPricePerSecond>8</BasicRefundPricePerSecond>
+                    <BasicRefundPricePerHour>87</BasicRefundPricePerHour>
+                    <BasicRefundPricePerDay>870</BasicRefundPricePerDay>
+                </GoodsItemBasicPrice>
+            </GoodsItemBasicPrices>
+        </GoodsItem>
+    </GoodsItems>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Category</legend>
+            <form action="change_category" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="28"><Request>
+    <CategoryId>7</CategoryId>
+    <CategoryName>Console Web 변경 Category</CategoryName>
+    <AppGroupCode>bns</AppGroupCode>
+    <IsDisplayable>1</IsDisplayable>
+    <DisplayOrder>3</DisplayOrder>
+    <ChangerAdminAccount>Web Admin</ChangerAdminAccount>
+    <CurrencyGroupId>17</CurrencyGroupId>
+    <ParentCategoryId>1</ParentCategoryId>
+    <CategoryData>{"CategoryType":["01"]}</CategoryData>
+    <CategoryDisplays type="array">
+        <CategoryDisplay>
+            <ActionType>1</ActionType>
+            <LanguageCode>1</LanguageCode>
+            <CategoryDisplayName>변경된 Category 이름</CategoryDisplayName>
+            <CategoryDisplayDescription>변경된 Category 설명</CategoryDisplayDescription>
+        </CategoryDisplay>
+        <CategoryDisplay>
+            <ActionType>3</ActionType>
+            <LanguageCode>2</LanguageCode>
+        </CategoryDisplay>
+        <CategoryDisplay>
+            <ActionType>2</ActionType>
+            <LanguageCode>3</LanguageCode>
+            <CategoryDisplayName>변경 추가된 Category 이름</CategoryDisplayName>
+            <CategoryDisplayDescription>변경 추가된 Category 설명</CategoryDisplayDescription>
+        </CategoryDisplay>
+    </CategoryDisplays>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Category Display Order</legend>
+            <form action="change_category_display_order" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="23"><Request>
+    <Categories type="array">
+        <Category>
+            <CategoryId>2</CategoryId>
+            <DisplayOrder>4</DisplayOrder>
+            <ChangerAdminAccount>Order Admin</ChangerAdminAccount>
+        </Category>
+        <Category>
+            <CategoryId>3</CategoryId>
+            <DisplayOrder>3</DisplayOrder>
+            <ChangerAdminAccount>Order Admin</ChangerAdminAccount>
+        </Category>
+        <Category>
+            <CategoryId>4</CategoryId>
+            <DisplayOrder>2</DisplayOrder>
+            <ChangerAdminAccount>Order Admin</ChangerAdminAccount>
+        </Category>
+        <Category>
+            <CategoryId>7</CategoryId>
+            <DisplayOrder>1</DisplayOrder>
+            <ChangerAdminAccount>Order Admin</ChangerAdminAccount>
+        </Category>
+    </Categories>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Item(Charge Item)</legend>
+            <form action="change_item_charge" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="31"><Request>
+    <ItemId>14</ItemId>
+    <ItemName>Console Web 변경 충전 아이템</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>1</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>1001</BasicPrice>
+    <BasicCurrencyGroupId>2</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web 변경 충전 아이템 설명</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <ActionType>1</ActionType>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>변경된 Charge Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경된 Charge Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>3</ActionType>
+            <LanguageCode>2</LanguageCode>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>2</ActionType>
+            <LanguageCode>3</LanguageCode>
+            <ItemDisplayName>변경 추가된 Charge Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경 추가된 Charge Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <ChargeItem>
+        <CurrencyId>1</CurrencyId>
+    </ChargeItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Item(Time Item)</legend>
+            <form action="change_item_time" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="40"><Request>
+    <ItemId>15</ItemId>
+    <ItemName>Console Web 변경 시간 아이템</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>2</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>20001</BasicPrice>
+    <BasicCurrencyGroupId>2</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web 변경 시간 아이템 설명</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <ActionType>1</ActionType>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>변경된 Time Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경된 Time Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>3</ActionType>
+            <LanguageCode>2</LanguageCode>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>2</ActionType>
+            <LanguageCode>3</LanguageCode>
+            <ItemDisplayName>변경 추가된 Time Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경 추가된 Time Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <TimeItem>
+        <DeductionStartType>2</DeductionStartType>
+        <TimeItemType>3</TimeItemType>
+        <DeductionUnitType>4</DeductionUnitType>
+        <EffectiveDurationUnitType>5</EffectiveDurationUnitType>
+        <EffectiveDuration>6</EffectiveDuration>
+        <ChargeTimePerSecond>7</ChargeTimePerSecond>
+        <BasicPricePerSecond>201</BasicPricePerSecond>
+        <BasicPricePerHour>2001</BasicPricePerHour>
+        <BasicPricePerDay>20001</BasicPricePerDay>
+        <BasicPricePerMinute>2001</BasicPricePerMinute>
+        <BasicPriceMask>20001</BasicPriceMask>
+    </TimeItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Item(Game Item)</legend>
+            <form action="change_item_game" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="33"><Request>
+    <ItemId>16</ItemId>
+    <ItemName>Console Web 변경 게임 아이템</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>3</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>5001</BasicPrice>
+    <BasicCurrencyGroupId>2</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Web Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web 변경 게임 아이템 설명</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <ActionType>1</ActionType>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>변경된 Game Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경된 Game Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>3</ActionType>
+            <LanguageCode>2</LanguageCode>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>2</ActionType>
+            <LanguageCode>3</LanguageCode>
+            <ItemDisplayName>변경 추가된 Game Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경 추가된 Game Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <GameItem>
+        <GameItemKey>Dw4N/w==</GameItemKey>
+        <GameItemData>AAASNAAAEjQ=</GameItemData>
+    </GameItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Item(Additional Service Item)</legend>
+            <form action="change_item_additional_service" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="31"><Request>
+    <ItemId>17</ItemId>
+    <ItemName>Console Web 변경 부가 서비스 아이템</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>4</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>8001</BasicPrice>
+    <BasicCurrencyGroupId>2</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Web Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web 변경 부가 서비스 아이템 설명</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <ActionType>1</ActionType>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>변경된 Additional Service Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경된 Additional Service Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>3</ActionType>
+            <LanguageCode>2</LanguageCode>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>2</ActionType>
+            <LanguageCode>3</LanguageCode>
+            <ItemDisplayName>변경 추가된 Additional Service Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경 추가된 Additional Service Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <AdditionalServiceItem>
+        <AdditionalServiceType>171</AdditionalServiceType>
+    </AdditionalServiceItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Item(Grade Item)</legend>
+            <form action="change_item_grade" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="40"><Request>
+    <ItemId>19</ItemId>
+    <ItemName>Change Grade Item #2</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>12</ItemType>
+    <IsConsumable>0</IsConsumable>
+    <BasicPrice>2,000</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Admin</ChangerAdminAccount>
+    <ItemDescription>Change Grade Item Description #2</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <ActionType>1</ActionType>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>변경된 등급 아이템 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경된 등급 아이템 설명</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>3</ActionType>
+            <LanguageCode>2</LanguageCode>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>2</ActionType>
+            <LanguageCode>3</LanguageCode>
+            <ItemDisplayName>변경(추가)된 등급 아이템 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경(추가)된 등급 아이템 설명</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <SubscriptionItem>
+        <DeductionStartType>2</DeductionStartType>
+        <DeductionUnitType>5</DeductionUnitType>
+        <EffectiveDurationUnitType>5</EffectiveDurationUnitType>
+        <EffectiveDuration>100</EffectiveDuration>
+        <BasicPricePerSecond>0</BasicPricePerSecond>
+        <BasicPricePerHour>0</BasicPricePerHour>
+        <BasicPricePerDay>0</BasicPricePerDay>
+        <SubscriptionItemKey>2</SubscriptionItemKey>
+        <SubscriptionScore>200</SubscriptionScore>
+        <GameGradeKey>100001</GameGradeKey>
+    </SubscriptionItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Item(Role Item)</legend>
+            <form action="change_item_role" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="32"><Request>
+    <ItemId>23</ItemId>
+    <ItemName>Change Role Item</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>16</ItemType>
+    <IsConsumable>0</IsConsumable>
+    <BasicPrice>10</BasicPrice>
+    <BasicCurrencyGroupId>1</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Admin</ChangerAdminAccount>
+    <ItemDescription>Change Role Item Description</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <ActionType>1</ActionType>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>변경된 역할 아이템 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경된 역할 아이템 설명</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>3</ActionType>
+            <LanguageCode>2</LanguageCode>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>2</ActionType>
+            <LanguageCode>3</LanguageCode>
+            <ItemDisplayName>변경(추가)된 역할 아이템 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경(추가)된 역할 아이템 설명</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <RoleItem>
+        <ItemAppGroupId>5</ItemAppGroupId>
+        <RoleId>3</RoleId>
+    </RoleItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Item(Gacha Charge Item)</legend>
+            <form action="change_item_gacha_charge" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="31"><Request>
+    <ItemId>24</ItemId>
+    <ItemName>Console Web 변경 가챠 충전 아이템</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>17</ItemType>
+    <IsConsumable>1</IsConsumable>
+    <BasicPrice>1001</BasicPrice>
+    <BasicCurrencyGroupId>2</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web 변경 가챠 충전 아이템 설명</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <ActionType>1</ActionType>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>변경된 Gacha Charge Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경된 Gacha Charge Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>3</ActionType>
+            <LanguageCode>2</LanguageCode>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>2</ActionType>
+            <LanguageCode>3</LanguageCode>
+            <ItemDisplayName>변경 추가된 Gacha Charge Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경 추가된 Gacha Charge Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <ChargeItem>
+        <CurrencyId>33</CurrencyId>
+    </ChargeItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Item(Grade Score Item)</legend>
+            <form action="change_item_grade_score" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="32"><Request>
+    <ItemId>25</ItemId>
+    <ItemName>Console Web 변경 등급 점수 아이템</ItemName>
+    <ItemAppGroupCode>bns</ItemAppGroupCode>
+    <ItemType>18</ItemType>
+    <IsConsumable>0</IsConsumable>
+    <BasicPrice>1001</BasicPrice>
+    <BasicCurrencyGroupId>2</BasicCurrencyGroupId>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <ItemDescription>Console Web 변경 등급 점수 아이템 설명</ItemDescription>
+    <ItemDisplays type="array">
+        <ItemDisplay>
+            <ActionType>1</ActionType>
+            <LanguageCode>1</LanguageCode>
+            <ItemDisplayName>변경된 Grade Score Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경된 Grade Score Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>3</ActionType>
+            <LanguageCode>2</LanguageCode>
+        </ItemDisplay>
+        <ItemDisplay>
+            <ActionType>2</ActionType>
+            <LanguageCode>3</LanguageCode>
+            <ItemDisplayName>변경 추가된 Gacha Charge Item 이름</ItemDisplayName>
+            <ItemDisplayDescription>변경 추가된 Gacha Charge Item 설명</ItemDisplayDescription>
+        </ItemDisplay>
+    </ItemDisplays>
+    <SubscriptionItem>
+        <SubscriptionItemKey>2</SubscriptionItemKey>
+        <SubscriptionScore>200</SubscriptionScore>
+        <GameGradeKey>1001</GameGradeKey>
+    </SubscriptionItem>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Goods</legend>
+            <form action="change_goods" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="180"><Request>
+    <GoodsId>9</GoodsId>
+    <GoodsName>Console Web 변경 상품</GoodsName>
+    <GoodsAppGroupCode>bns</GoodsAppGroupCode>
+    <GoodsType>2</GoodsType>
+    <DeliveryType>2</DeliveryType>
+    <SaleStatus>1</SaleStatus>
+    <EffectiveFrom>2012-12-01 00:00:00 +09:00</EffectiveFrom>
+    <EffectiveTo>9999-12-31 23:59:59 +09:00</EffectiveTo>
+    <SaleableQuantity>9001</SaleableQuantity>
+    <RefundUnitCode>2</RefundUnitCode>
+    <IsRefundable>1</IsRefundable>
+    <IsAvailableRecurringPayment>1</IsAvailableRecurringPayment>
+    <ChangerAdminAccount>Console Admin</ChangerAdminAccount>
+    <GoodsDescription>Console Web 변경 상품 설명</GoodsDescription>
+    <GoodsData>AQABAAE=</GoodsData>
+    <GoodsPurchaseType>1</GoodsPurchaseType>
+    <GoodsPurchaseCheckMask>4</GoodsPurchaseCheckMask>
+    <GoodsSaleLimits type="array">
+        <GoodsSaleLimit>
+            <ActionType>1</ActionType>
+            <SaleLimitType>1</SaleLimitType>
+            <SaleLimitValue>51</SaleLimitValue>
+        </GoodsSaleLimit>
+    </GoodsSaleLimits>
+    <GoodsCategories type="array">
+        <GoodsCategory>
+            <ActionType>1</ActionType>
+            <CategoryId>3</CategoryId>
+            <DisplayOrder>6</DisplayOrder>
+        </GoodsCategory>
+        <GoodsCategory>
+            <ActionType>3</ActionType>
+            <CategoryId>7</CategoryId>
+        </GoodsCategory>
+        <GoodsCategory>
+            <ActionType>2</ActionType>
+            <CategoryId>6</CategoryId>
+            <DisplayOrder>1</DisplayOrder>
+        </GoodsCategory>
+    </GoodsCategories>
+    <GoodsDisplays type="array">
+        <GoodsDisplay>
+            <ActionType>1</ActionType>
+            <LanguageCode>1</LanguageCode>
+            <GoodsDisplayName>Console Web에서 변경한 상품 배치 이름</GoodsDisplayName>
+            <GoodsDisplayDescription>Console Web에서 변경한 상품 배치 설명</GoodsDisplayDescription>
+        </GoodsDisplay>
+        <GoodsDisplay>
+            <ActionType>3</ActionType>
+            <LanguageCode>2</LanguageCode>
+        </GoodsDisplay>
+        <GoodsDisplay>
+            <ActionType>2</ActionType>
+            <LanguageCode>3</LanguageCode>
+            <GoodsDisplayName>Console Web에서 변경에 의해 추가된 상품 배치 이름</GoodsDisplayName>
+            <GoodsDisplayDescription>Console Web에서 변경에 의해 추가된 상품 배치 설명</GoodsDisplayDescription>
+        </GoodsDisplay>
+    </GoodsDisplays>
+    <GoodsAccountGrades type="array">
+        <GoodsAccountGrade>
+            <ActionType>3</ActionType>
+            <AccountGradeId>2</AccountGradeId>
+        </GoodsAccountGrade>
+        <GoodsAccountGrade>
+            <ActionType>2</ActionType>
+            <AccountGradeId>3</AccountGradeId>
+        </GoodsAccountGrade>
+    </GoodsAccountGrades>
+    <GoodsSalePricePolicies type="array">
+        <GoodsSalePricePolicy>
+            <ActionType>1</ActionType>
+            <CurrencyGroupId>1</CurrencyGroupId>
+            <PricePolicyType>1</PricePolicyType>
+            <EffectiveFrom>2012-12-01 00:00:00 +09:00</EffectiveFrom>
+            <EffectiveTo>2013-12-02 00:00:00 +09:00</EffectiveTo>
+            <SalePrice>29700</SalePrice>
+            <DiscountValueType>1</DiscountValueType>
+            <DiscountValue>500</DiscountValue>
+            <RewardCurrencyId>5</RewardCurrencyId>
+            <RewardValueType>1</RewardValueType>
+            <RewardValue>505</RewardValue>
+        </GoodsSalePricePolicy>
+        <GoodsSalePricePolicy>
+            <ActionType>3</ActionType>
+            <CurrencyGroupId>1</CurrencyGroupId>
+            <PricePolicyType>1</PricePolicyType>
+            <EffectiveFrom>2013-12-01 00:00:00 +09:00</EffectiveFrom>
+        </GoodsSalePricePolicy>
+        <GoodsSalePricePolicy>
+            <ActionType>2</ActionType>
+            <CurrencyGroupId>3</CurrencyGroupId>
+            <PricePolicyType>1</PricePolicyType>
+            <EffectiveFrom>2012-12-01 00:00:00 +09:00</EffectiveFrom>
+            <EffectiveTo>9999-12-31 23:59:59 +09:00</EffectiveTo>
+            <SalePrice>49700</SalePrice>
+            <DiscountValueType>1</DiscountValueType>
+            <DiscountValue>400</DiscountValue>
+            <RewardCurrencyId>5</RewardCurrencyId>
+            <RewardValueType>1</RewardValueType>
+            <RewardValue>405</RewardValue>
+        </GoodsSalePricePolicy>
+    </GoodsSalePricePolicies>
+    <GoodsBasicPrices type="array">
+        <GoodsBasicPrice>
+            <ActionType>1</ActionType>
+            <CurrencyGroupId>1</CurrencyGroupId>
+            <BasicSalePrice>29700</BasicSalePrice>
+            <RefundFee>297</RefundFee>
+        </GoodsBasicPrice>
+        <GoodsBasicPrice>
+            <ActionType>3</ActionType>
+            <CurrencyGroupId>2</CurrencyGroupId>
+        </GoodsBasicPrice>
+        <GoodsBasicPrice>
+            <ActionType>2</ActionType>
+            <CurrencyGroupId>3</CurrencyGroupId>
+            <BasicSalePrice>39700</BasicSalePrice>
+            <RefundFee>397</RefundFee>
+        </GoodsBasicPrice>
+    </GoodsBasicPrices>
+    <GoodsItems type="array">
+        <GoodsItem>
+            <ActionType>1</ActionType>
+            <ItemId>16</ItemId>
+            <ItemQuantity>30</ItemQuantity>
+            <ItemExpirationType>2</ItemExpirationType>
+            <ItemExpirationDuration>60</ItemExpirationDuration>
+            <ItemData>//8=</ItemData>
+            <DeliveryPriority>2</DeliveryPriority>
+            <GoodsItemBasicPrices type="array">
+                <GoodsItemBasicPrice>
+                    <ActionType>1</ActionType>
+                    <CurrencyGroupId>1</CurrencyGroupId>
+                    <BasicSalePrice>20001</BasicSalePrice>
+                    <BasicRefundPrice>201</BasicRefundPrice>
+                    <BasicRefundPricePerSecond>21</BasicRefundPricePerSecond>
+                    <BasicRefundPricePerHour>201</BasicRefundPricePerHour>
+                    <BasicRefundPricePerDay>2001</BasicRefundPricePerDay>
+                </GoodsItemBasicPrice>
+                <GoodsItemBasicPrice>
+                    <ActionType>3</ActionType>
+                    <CurrencyGroupId>2</CurrencyGroupId>
+                </GoodsItemBasicPrice>
+                <GoodsItemBasicPrice>
+                    <ActionType>2</ActionType>
+                    <CurrencyGroupId>3</CurrencyGroupId>
+                    <BasicSalePrice>30001</BasicSalePrice>
+                    <BasicRefundPrice>301</BasicRefundPrice>
+                    <BasicRefundPricePerSecond>31</BasicRefundPricePerSecond>
+                    <BasicRefundPricePerHour>301</BasicRefundPricePerHour>
+                    <BasicRefundPricePerDay>3001</BasicRefundPricePerDay>
+                </GoodsItemBasicPrice>
+            </GoodsItemBasicPrices>
+        </GoodsItem>
+        <GoodsItem>
+            <ActionType>3</ActionType>
+            <ItemId>17</ItemId>
+        </GoodsItem>
+        <GoodsItem>
+            <ActionType>2</ActionType>
+            <ItemId>6</ItemId>
+            <ItemQuantity>30</ItemQuantity>
+            <ItemExpirationType>2</ItemExpirationType>
+            <ItemExpirationDuration>60</ItemExpirationDuration>
+            <ItemData>//8=</ItemData>
+            <DeliveryPriority>1</DeliveryPriority>
+            <GoodsItemBasicPrices type="array">
+                <GoodsItemBasicPrice>
+                    <ActionType>2</ActionType>
+                    <CurrencyGroupId>1</CurrencyGroupId>
+                    <BasicSalePrice>20001</BasicSalePrice>
+                    <BasicRefundPrice>201</BasicRefundPrice>
+                    <BasicRefundPricePerSecond>21</BasicRefundPricePerSecond>
+                    <BasicRefundPricePerHour>201</BasicRefundPricePerHour>
+                    <BasicRefundPricePerDay>2001</BasicRefundPricePerDay>
+                </GoodsItemBasicPrice>
+                <GoodsItemBasicPrice>
+                    <ActionType>2</ActionType>
+                    <CurrencyGroupId>2</CurrencyGroupId>
+                    <BasicSalePrice>30001</BasicSalePrice>
+                    <BasicRefundPrice>301</BasicRefundPrice>
+                    <BasicRefundPricePerSecond>31</BasicRefundPricePerSecond>
+                    <BasicRefundPricePerHour>301</BasicRefundPricePerHour>
+                    <BasicRefundPricePerDay>3001</BasicRefundPricePerDay>
+                </GoodsItemBasicPrice>
+            </GoodsItemBasicPrices>
+        </GoodsItem>
+    </GoodsItems>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Goods Sale Status</legend>
+            <form action="change_goods_sale_status" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="4"><Request>
+       <GoodsId>9</GoodsId>
+       <SaleStatus>3</SaleStatus>
+       <ChangerAdminAccount>Administrator</ChangerAdminAccount>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Goods Display Order</legend>
+            <form action="change_goods_display_order" method="post">
+                XML : <textarea type="text" name="XML" cols="110" rows="14"><Request>
+    <ChangerAdminAccount>OrderAdmin</ChangerAdminAccount>
+    <GoodsCategories type="array">
+        <GoodsCategory>
+            <GoodsId>1</GoodsId>
+            <CategoryId>3</CategoryId>
+            <DisplayOrder>6</DisplayOrder>
+        </GoodsCategory>
+        <GoodsCategory>
+            <GoodsId>2</GoodsId>
+            <CategoryId>3</CategoryId>
+            <DisplayOrder>5</DisplayOrder>
+        </GoodsCategory>
+    </GoodsCategories>
+</Request>
+</textarea><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Remove Goods</legend>
+            <form action="remove_goods">
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                ChangerAdminAccount : <input type="text" name="ChangerAdminAccount"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Remove Item</legend>
+            <form action="remove_item">
+                ItemId : <input type="text" name="ItemId"/><br/>
+                ItemType : <input type="text" name="ItemType"/><br/>
+                ChangerAdminAccount : <input type="text" name="ChangerAdminAccount"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Remove Category</legend>
+            <form action="remove_category">
+                CategoryId : <input type="text" name="CategoryId"/><br/>
+                ChangerAdminAccount : <input type="text" name="ChangerAdminAccount"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Category Display</legend>
+            <form action="change_category_display">
+                CategoryId : <input type="text" name="CategoryId"/><br/>
+                LanguageCode : <input type="text" name="LanguageCode"/><br/>
+                CategoryDisplayName : <input type="text" name="CategoryDisplayName"/><br/>
+                CategoryDisplayDescription : <input type="text" name="CategoryDisplayDescription"/><br/>
+                ChangerAdminAccount : <input type="text" name="ChangerAdminAccount"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Item Display</legend>
+            <form action="change_item_display">
+                ItemId : <input type="text" name="ItemId"/><br/>
+                LanguageCode : <input type="text" name="LanguageCode"/><br/>
+                ItemDisplayName : <input type="text" name="ItemDisplayName"/><br/>
+                ItemDisplayDescription : <input type="text" name="ItemDisplayDescription"/><br/>
+                ChangerAdminAccount : <input type="text" name="ChangerAdminAccount"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Change Goods Display</legend>
+            <form action="change_goods_display">
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                LanguageCode : <input type="text" name="LanguageCode"/><br/>
+                GoodsDisplayName : <input type="text" name="GoodsDisplayName"/><br/>
+                GoodsDisplayDescription : <input type="text" name="GoodsDisplayDescription"/><br/>
+                ChangerAdminAccount : <input type="text" name="ChangerAdminAccount"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Add Goods Category</legend>
+            <form action="add_goods_category">
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                CategoryId : <input type="text" name="CategoryId"/><br/>
+                DisplayOrder : <input type="text" name="DisplayOrder"/><br/>
+                RegistrarAdminAccount : <input type="text" name="RegistrarAdminAccount"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Remove Goods Category</legend>
+            <form action="remove_goods_category">
+                GoodsId : <input type="text" name="GoodsId"/><br/>
+                CategoryId : <input type="text" name="CategoryId"/><br/>
+                ChangerAdminAccount : <input type="text" name="ChangerAdminAccount"/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Cache Flush</legend>
+            <form action="cache_flush">
+                <input type="submit" value="Submit"/>
+            </form>
+        </fieldset>
+    </body>
+</html>
