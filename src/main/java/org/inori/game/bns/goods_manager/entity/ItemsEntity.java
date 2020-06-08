@@ -1,6 +1,8 @@
 package org.inori.game.bns.goods_manager.entity;
 
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -10,6 +12,8 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "Items", schema = "dbo", catalog = "GoodsDb")
+@DynamicInsert
+@DynamicUpdate
 public class ItemsEntity {
     @Id@Column(name = "ItemId")
     private int itemId;
