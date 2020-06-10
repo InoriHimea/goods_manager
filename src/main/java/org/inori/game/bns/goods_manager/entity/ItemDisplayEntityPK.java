@@ -12,10 +12,13 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ItemDisplayEntityPK implements Serializable {
     @Column(name = "ItemId")@Id
     private int itemId;
-    @Column(name = "LanguageCode")/*@Id*/@Basic
+    @Column(name = "LanguageCode")@Basic
     @Convert(converter = LanguageCodeConverter.class)
     private LanguageCode languageCode;
 

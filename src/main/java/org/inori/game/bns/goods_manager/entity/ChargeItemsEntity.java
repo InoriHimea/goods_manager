@@ -1,45 +1,29 @@
 package org.inori.game.bns.goods_manager.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiParam;
+import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "ChargeItems", schema = "dbo", catalog = "GoodsDb")
+@DynamicInsert
+@DynamicUpdate
 public class ChargeItemsEntity {
+    @Id@Column(name = "ItemId", insertable = false, updatable = false)
     private int itemId;
+    @Basic@Column(name = "CurrencyId")
     private short currencyId;
 
-    @Id
-    @Column(name = "ItemId")
-    public int getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
-
-    @Basic
-    @Column(name = "CurrencyId")
-    public short getCurrencyId() {
-        return currencyId;
-    }
-
-    public void setCurrencyId(short currencyId) {
-        this.currencyId = currencyId;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ChargeItemsEntity that = (ChargeItemsEntity) o;
-        return itemId == that.itemId &&
-                currencyId == that.currencyId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(itemId, currencyId);
-    }
+    @JsonIgnore
+    @OneToOne
+    //@MapsId
+    @JoinColumn(name = "ItemId", insertable = false, updatable = false)
+    private ItemsEntity item;
 }

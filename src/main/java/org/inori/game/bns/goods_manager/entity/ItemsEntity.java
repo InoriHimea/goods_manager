@@ -1,5 +1,6 @@
 package org.inori.game.bns.goods_manager.entity;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -35,9 +36,27 @@ public class ItemsEntity {
     @Basic@Column(name = "ItemDescription")
     private String itemDescription;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = ItemDisplayEntity.class)
-    @JoinColumn(name = "itemId")
+    @MapsId
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity =
+            ItemDisplayEntity.class)
+    @JoinColumn(name = "ItemId", insertable = false, updatable = false)
     private List<ItemDisplayEntity> itemDisplay;
+
+    @OneToOne(mappedBy = "item", cascade = CascadeType.ALL)
+    //@JoinColumn(name = "itemId", insertable = false, updatable = false)
+    private ChargeItemsEntity chargeItem;
+
+    @OneToOne(mappedBy = "item", cascade = CascadeType.ALL)
+    //@JoinColumn(name = "itemId", insertable = false, updatable = false)
+    private TimeItemsEntity timeItem;
+
+    @OneToOne(mappedBy = "item", cascade = CascadeType.ALL)
+    //@JoinColumn(name = "itemId", insertable = false, updatable = false)
+    private GameItemsEntity gameItem;
+
+    @OneToOne(mappedBy = "item", cascade = CascadeType.ALL)
+    //@JoinColumn(name = "itemId", insertable = false, updatable = false)
+    private AdditionalServiceItemsEntity additionalServiceItem;
 
     @Basic
     @Column(name = "IsConsumable")

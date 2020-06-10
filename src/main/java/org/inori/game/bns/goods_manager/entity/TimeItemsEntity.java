@@ -1,6 +1,11 @@
 package org.inori.game.bns.goods_manager.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiParam;
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -9,8 +14,10 @@ import java.util.Objects;
 @Data
 @Entity
 @Table(name = "TimeItems", schema = "dbo", catalog = "GoodsDb")
+@DynamicUpdate
+@DynamicInsert
 public class TimeItemsEntity {
-    @Id@Column(name = "ItemId")
+    @Id@Column(name = "ItemId", insertable = false, updatable = false)
     private int itemId;
     @Basic@Column(name = "DeductionStartType")
     private short deductionStartType;
@@ -39,4 +46,9 @@ public class TimeItemsEntity {
     @Basic@Column(name = "BasicPriceMask")
     private BigDecimal basicPriceMask;
 
+    @JsonIgnore
+    @OneToOne
+    //@MapsId
+    @JoinColumn(name = "ItemId", insertable = false, updatable = false)
+    private ItemsEntity item;
 }

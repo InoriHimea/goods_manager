@@ -16,9 +16,9 @@ import java.util.Objects;
 @DynamicInsert
 @DynamicUpdate
 public class ItemDisplayEntity {
-    @Id@Column(name = "ItemId")
+    @Id@Column(name = "ItemId", insertable = false, updatable = false)
     private int itemId;
-    /*@Id*/@Basic@Column(name = "LanguageCode")
+    @Basic@Column(name = "LanguageCode")
     @Convert(converter = LanguageCodeConverter.class)
     private LanguageCode languageCode = LanguageCode.THAI;
     @Basic@Column(name = "ItemDisplayName")

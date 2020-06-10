@@ -62,7 +62,7 @@ public class CategoriesEntity {
     @ApiModelProperty("子节点")
     private List<CategoriesEntity> children;
     @Fetch (FetchMode.SUBSELECT)
-    @OneToMany(mappedBy = "categoryId", cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+    @OneToMany(mappedBy = "categoryId", cascade = CascadeType.ALL,
             fetch = FetchType.EAGER, targetEntity = CategoryDisplayEntity.class)
     @ApiModelProperty("显示配置")
     private List<CategoryDisplayEntity> displayList;

@@ -1,57 +1,31 @@
 package org.inori.game.bns.goods_manager.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiParam;
+import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "GameItems", schema = "dbo", catalog = "GoodsDb")
+@DynamicInsert
+@DynamicUpdate
 public class GameItemsEntity {
+    @Id@Column(name = "ItemId", insertable = false, updatable = false)
     private int itemId;
+    @Basic@Column(name = "GameItemKey")
     private String gameItemKey;
+    @Basic@Column(name = "GameItemData")
     private String gameItemData;
 
-    @Id
-    @Column(name = "ItemId")
-    public int getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
-
-    @Basic
-    @Column(name = "GameItemKey")
-    public String getGameItemKey() {
-        return gameItemKey;
-    }
-
-    public void setGameItemKey(String gameItemKey) {
-        this.gameItemKey = gameItemKey;
-    }
-
-    @Basic
-    @Column(name = "GameItemData")
-    public String getGameItemData() {
-        return gameItemData;
-    }
-
-    public void setGameItemData(String gameItemData) {
-        this.gameItemData = gameItemData;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        GameItemsEntity that = (GameItemsEntity) o;
-        return itemId == that.itemId &&
-                Objects.equals(gameItemKey, that.gameItemKey) &&
-                Objects.equals(gameItemData, that.gameItemData);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(itemId, gameItemKey, gameItemData);
-    }
+    @JsonIgnore
+    @OneToOne
+    //@MapsId
+    @JoinColumn(name = "ItemId", insertable = false, updatable = false)
+    private ItemsEntity item;
 }
