@@ -14,7 +14,7 @@ public enum ItemType {
     ADDITIONAL_SERVICE_ITEM(4, "条件服务类商品"),
     COUPON_ITEM(11, "券类商品"),
     GRADE_ITEM(12, "分级商品"),
-    TAG_ITEM(13, ""),
+    TAG_ITEM(13, "暂无翻译"),
     IN_GAME_COUPON_ITEM(14, "游戏内置券类商品"),
     LICENSE_ITEM(15, "许可类商品"),
     ROLE_ITEM(16, "角色商品"),

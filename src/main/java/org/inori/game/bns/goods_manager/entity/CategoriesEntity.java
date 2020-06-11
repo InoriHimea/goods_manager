@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import lombok.experimental.Tolerate;
 import org.hibernate.annotations.*;
+import org.inori.game.bns.goods_manager.controller.model.Constant;
 
 import javax.persistence.*;
 import javax.persistence.CascadeType;
@@ -18,14 +19,13 @@ import java.util.List;
 @Data
 @Builder
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "Categories", schema = "dbo", catalog = "GoodsDb")
 @DynamicInsert
 @DynamicUpdate
 @ApiModel("商城分类")
 public class CategoriesEntity {
-
-    @Tolerate
-    public CategoriesEntity(){}
 
     @Id@Column(name = "CategoryId", updatable = false)
     @ApiModelProperty(value = "分类的ID", required = true)
@@ -46,7 +46,7 @@ public class CategoriesEntity {
     private Date changed = new Date();
     @Basic@Column(name = "ChangerAdminAccount")
     @ApiModelProperty(value = "更改人账户", hidden = true)
-    private String changerAdminAccount = "GoodsManagerUser";
+    private String changerAdminAccount = Constant.DEFAULT_ACCOUNT_NAME;
     @Basic@Column(name = "CurrencyGroupId")
     @ApiModelProperty("货币组ID")
     private Short currencyGroupId = 71;

@@ -50,5 +50,6 @@ public class TimeItemsEntity {
     @OneToOne
     //@MapsId
     @JoinColumn(name = "ItemId", insertable = false, updatable = false)
+    @ApiModelProperty(hidden = true)
     private ItemsEntity item;
 }
