@@ -3,6 +3,7 @@ package org.inori.game.bns.goods_manager.entity;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.inori.game.bns.goods_manager.enums.GoodType;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -21,7 +22,8 @@ public class GoodsEntity {
     @Basic@Column(name = "GoodsAppGroupCode")
     private String goodsAppGroupCode;
     @Basic@Column(name = "GoodsType")
-    private short goodsType;
+    @Convert(converter = GoodType.GoodTypeConverter.class)
+    private GoodType goodsType;
     @Basic@Column(name = "DeliveryType")
     private short deliveryType;
     @Basic@Column(name = "SaleStatus")

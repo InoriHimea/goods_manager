@@ -19,7 +19,7 @@ import java.util.List;
 @DynamicUpdate
 public class ItemsEntity {
     @Id@Column(name = "ItemId")
-    @ApiModelProperty(value = "物品ID", allowableValues = "[0, 10000]", required = true)
+    @ApiModelProperty(value = "物品ID", allowableValues = "range[0, 10000]", required = true)
     private int itemId;
     @Basic@Column(name = "ItemName")
     @ApiModelProperty(value = "物品名称", position = 1, required = true)
@@ -29,6 +29,7 @@ public class ItemsEntity {
     private String itemAppGroupCode = "bnsgrnTH";
     @Basic@Column(name = "ItemType")
     @ApiModelProperty(value = "物品类型", position = 3, example = "GAME_ITEM")
+    @Convert(converter = ItemType.ItemTypeEnumConverter.class)
     private ItemType itemType = ItemType.GAME_ITEM;
     @ApiModelProperty(value = "是否为消耗品", position = 4)
     private boolean isConsumable = false;

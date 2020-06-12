@@ -1,12 +1,10 @@
 package org.inori.game.bns.goods_manager.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import org.inori.game.bns.goods_manager.converter.LanguageCodeConverter;
 import org.inori.game.bns.goods_manager.enums.LanguageCode;
 
 import javax.persistence.*;
@@ -26,7 +24,7 @@ public class CategoryDisplayEntity {
     @ApiModelProperty(value = "分类的ID", required = true)
     private short categoryId;
     /*@Id*/@Basic@Column(name = "LanguageCode")
-    @Convert(converter = LanguageCodeConverter.class)
+    @Convert(converter = LanguageCode.LanguageCodeConverter.class)
     @ApiModelProperty(value = "语言Code", required = true)
     private LanguageCode languageCode = LanguageCode.THAI;
     @Basic@Column(name = "CategoryDisplayName")

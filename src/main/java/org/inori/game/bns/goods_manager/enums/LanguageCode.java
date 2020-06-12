@@ -1,15 +1,16 @@
 package org.inori.game.bns.goods_manager.enums;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
+import org.inori.game.bns.goods_manager.converter.KeyValueEnumConverter;
+
+import javax.persistence.Converter;
 
 @Getter
 @AllArgsConstructor
 //@JsonFormat(shape = JsonFormat.Shape.OBJECT)
-public enum LanguageCode {
+public enum LanguageCode implements KeyValueEnum<Integer> {
     DEFAULT(0, "默认语言"),
     KOREAN(1, "韩语"),
     ENGLISH(2, "英语"),
@@ -27,10 +28,19 @@ public enum LanguageCode {
     private int key;
     private String value;
 
+    public Integer getKey() {
+        return key;
+    }
+
     @JsonValue
     @Override
     public String toString() {
         //return this.getValue();
-        return this.name();
+        return this.getValue();
+    }
+
+    @Converter(autoApply = true)
+    public static class LanguageCodeConverter extends KeyValueEnumConverter<LanguageCode, Integer> {
+
     }
 }

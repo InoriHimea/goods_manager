@@ -30,12 +30,12 @@ public class SwaggerAgent {
             new AgentBuilder.Default()
                     .type(ElementMatchers.nameStartsWith("springfox."))
                     //.type(ElementMatchers.is(ModelAttributeParameterExpander.class))
-                    /*.transform((builder, typeDescription, classLoader, module) ->
-                            builder.visit(Advice.to(SwaggerModelAttributeAdvice.class)
-                                    .on(ElementMatchers.any())))*/
                     .transform((builder, typeDescription, classLoader, module) ->
                             builder.method(ElementMatchers.named("propertyDescriptors"))
                                     .intercept(MethodDelegation.to(SwaggerModelAttributeMethodDelegation.class)))
+/*                    .transform((builder, typeDescription, classLoader, module) ->
+                            builder.visit(Advice.to(SwaggerModelAttributeAdvice.class)
+                                    .on(ElementMatchers.named("propertyDescriptors"))))*/
                     .installOnByteBuddyAgent();
 
             log.info("ByteBuddy Agent init success");

@@ -1,12 +1,10 @@
 package org.inori.game.bns.goods_manager.entity;
 
 import lombok.*;
-import org.inori.game.bns.goods_manager.converter.LanguageCodeConverter;
 import org.inori.game.bns.goods_manager.enums.LanguageCode;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
 
 @Data
 @Builder
@@ -16,6 +14,6 @@ public class CategoryDisplayEntityPK implements Serializable {
     @Column(name = "CategoryId")@Id
     private short categoryId;
     /*@Id*/@Basic@Column(name = "LanguageCode")
-    @Convert(converter = LanguageCodeConverter.class)
+    @Convert(converter = LanguageCode.LanguageCodeConverter.class)
     private LanguageCode languageCode;
 }

@@ -2,12 +2,14 @@ package org.inori.game.bns.goods_manager.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
+import org.inori.game.bns.goods_manager.converter.KeyValueEnumConverter;
+
+import javax.persistence.Converter;
 
 @Getter
 @AllArgsConstructor
-@ToString
-public enum ItemType {
+//@ToString
+public enum ItemType implements KeyValueEnum<Integer> {
     CHARGE_ITEM(1, "付费商品"),
     TIME_ITEM(2, "时限商品"),
     GAME_ITEM(3, "游戏商品"),
@@ -24,4 +26,18 @@ public enum ItemType {
 
     private int key;
     private String value;
+
+    public Integer getKey() {
+        return key;
+    }
+
+    @Override
+    public String toString() {
+        return this.getValue();
+    }
+
+    @Converter(autoApply = true)
+    public static class ItemTypeEnumConverter extends KeyValueEnumConverter<ItemType, Integer> {
+
+    }
 }
