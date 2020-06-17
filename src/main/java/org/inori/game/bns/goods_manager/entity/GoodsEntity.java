@@ -3,10 +3,13 @@ package org.inori.game.bns.goods_manager.entity;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.inori.game.bns.goods_manager.enums.GoodType;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -54,6 +57,48 @@ public class GoodsEntity {
     private Integer selectableItemQuantity;
     @Basic@Column(name = "GoodsPurchaseCheckMask")
     private Integer goodsPurchaseCheckMask;
+
+    @Fetch(FetchMode.SUBSELECT)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity =
+            GoodsSaleLimitEntity.class)
+    @JoinColumn(name = "GoodsId", insertable = false, updatable = false)
+    private List<GoodsSaleLimitEntity> goodsSaleLimit;
+
+    @Fetch(FetchMode.SUBSELECT)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity =
+            GoodsCategoriesEntity.class)
+    @JoinColumn(name = "GoodsId", insertable = false, updatable = false)
+    private List<GoodsCategoriesEntity> goodsCategory;
+
+    @Fetch(FetchMode.SUBSELECT)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity =
+            GoodsDisplayEntity.class)
+    @JoinColumn(name = "GoodsId", insertable = false, updatable = false)
+    private List<GoodsDisplayEntity> goodsDisplay;
+
+    @Fetch(FetchMode.SUBSELECT)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity =
+            GoodsAccountGradesEntity.class)
+    @JoinColumn(name = "GoodsId", insertable = false, updatable = false)
+    private List<GoodsAccountGradesEntity> goodsAccountGrades;
+
+    @Fetch(FetchMode.SUBSELECT)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity =
+            GoodsBasicPricesEntity.class)
+    @JoinColumn(name = "GoodsId", insertable = false, updatable = false)
+    private List<GoodsBasicPricesEntity> goodsBasicPrices;
+
+    @Fetch(FetchMode.SUBSELECT)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity =
+            GoodsSalePricePoliciesEntity.class)
+    @JoinColumn(name = "GoodsId", insertable = false, updatable = false)
+    private List<GoodsSalePricePoliciesEntity> goodsSalePricePolicies;
+
+    @Fetch(FetchMode.SUBSELECT)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity =
+            GoodsItemsEntity.class)
+    @JoinColumn(name = "GoodsId", insertable = false, updatable = false)
+    private List<GoodsItemsEntity> goodsItems;
 
     @Basic
     @Column(name = "IsRefundable")

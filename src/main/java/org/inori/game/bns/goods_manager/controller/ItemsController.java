@@ -4,6 +4,7 @@ import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.inori.game.bns.goods_manager.entity.ItemsEntity;
 import org.inori.game.bns.goods_manager.exception.IDExistsException;
+import org.inori.game.bns.goods_manager.exception.IDNotExistsException;
 import org.inori.game.bns.goods_manager.model.SelectOption;
 import org.inori.game.bns.goods_manager.service.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,5 +56,24 @@ public class ItemsController {
         } catch (IDExistsException e) {
             return Mono.error(e);
         }
+    }
+
+    @PutMapping("/update/one")
+    @ApiOperation("更新一个Item")
+    public Mono<Boolean> updateOne(ItemsEntity item) {
+        log.debug("更新一个Item => {}", item);
+
+        try {
+            return Mono.just(itemsService.update(item) != null);
+        } catch (IDNotExistsException e) {
+            return Mono.error(e);
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    @ApiOperation("删除一个Item")
+    public Mono<Boolean> deleteOne(@PathVariable int id) {
+        log.debug("删除一个Item => {}", id);
+        return Mono.just(itemsService.delete(id));
     }
 }

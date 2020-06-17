@@ -9,5 +9,4 @@ class GoodsManagerApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

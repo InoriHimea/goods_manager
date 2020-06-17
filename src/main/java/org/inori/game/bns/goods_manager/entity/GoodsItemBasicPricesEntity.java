@@ -11,9 +11,9 @@ import java.util.Objects;
 @Table(name = "GoodsItemBasicPrices", schema = "dbo", catalog = "GoodsDb")
 @IdClass(GoodsItemBasicPricesEntityPK.class)
 public class GoodsItemBasicPricesEntity {
-    @Id@Column(name = "GoodsId")
+    @Id@Column(name = "GoodsId", insertable = false, updatable = false)
     private int goodsId;
-    @Id@Column(name = "ItemId")
+    @Id@Column(name = "ItemId", insertable = false, updatable = false)
     private int itemId;
     @Id@Column(name = "CurrencyGroupId")
     private short currencyGroupId;

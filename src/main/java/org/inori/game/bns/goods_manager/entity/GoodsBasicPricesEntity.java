@@ -11,10 +11,10 @@ import java.util.Objects;
 @Table(name = "GoodsBasicPrices", schema = "dbo", catalog = "GoodsDb")
 @IdClass(GoodsBasicPricesEntityPK.class)
 public class GoodsBasicPricesEntity {
-    @Id@Column(name = "GoodsId")
+    @Id@Column(name = "GoodsId", insertable = false, updatable = false)
     private int goodsId;
     @Id@Column(name = "CurrencyGroupId")
-    private short currencyGroupId;
+    private short currencyGroupId = 71;
     @Basic@Column(name = "BasicSalePrice")
     private BigDecimal basicSalePrice;
     @Basic@Column(name = "RefundFee")
