@@ -3,6 +3,7 @@ package org.inori.game.bns.goods_manager.service.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.inori.game.bns.goods_manager.entity.ItemsEntity;
 import org.inori.game.bns.goods_manager.exception.IDExistsException;
+import org.inori.game.bns.goods_manager.exception.IDNotExistsException;
 import org.inori.game.bns.goods_manager.model.SelectOption;
 import org.inori.game.bns.goods_manager.repository.ItemsRepository;
 import org.inori.game.bns.goods_manager.service.ItemsService;
@@ -45,5 +46,19 @@ public class ItemsServiceImpl implements ItemsService {
             throw new IDExistsException("需要保存的ID已存在，请更换或尝试更新");
         }
         return itemsRepository.saveAndFlush(item);
+    }
+
+    @Override
+    public ItemsEntity update(ItemsEntity item) throws IDNotExistsException {
+        if (! itemsRepository.existsById(item.getItemId())) {
+            throw new IDNotExistsException("ID不存在，请先执行创建，或更新ID");
+        }
+        return itemsRepository.saveAndFlush(item);
+    }
+
+    @Override
+    public boolean delete(int id) {
+        itemsRepository.deleteById(id);
+        return itemsRepository.existsById(id);
     }
 }

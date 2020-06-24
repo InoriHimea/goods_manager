@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Objects;
 
@@ -12,16 +14,18 @@ import java.util.Objects;
 @Table(name = "GoodsSalePricePolicies", schema = "dbo", catalog = "GoodsDb")
 @IdClass(GoodsSalePricePoliciesEntityPK.class)
 public class GoodsSalePricePoliciesEntity {
-    @Id@Column(name = "GoodsId")
+    @Id@Column(name = "GoodsId", insertable = false, updatable = false)
     private int goodsId;
     @Id@Column(name = "CurrencyGroupId")
-    private short currencyGroupId;
+    private short currencyGroupId = 71;
     @Id@Column(name = "PricePolicyType")
     private short pricePolicyType;
     @Id@Column(name = "EffectiveFrom")
-    private Date effectiveFrom;
+    private Date effectiveFrom =  new Date();
     @Basic@Column(name = "EffectiveTo")
-    private Date effectiveTo;
+    private Date effectiveTo = Date.from(
+            LocalDateTime.of(2099, 12, 31, 23, 59, 59)
+                    .atZone(ZoneId.systemDefault()).toInstant());
     @Basic@Column(name = "SalePrice")
     private BigDecimal salePrice;
     @Basic@Column(name = "DiscountValueType")
