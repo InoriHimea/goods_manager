@@ -16,6 +16,11 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <byte-buddy.version>1.10.11</byte-buddy.version>
+        <springfox.version>3.0.0-SNAPSHOT</springfox.version>
+        <logback.version>1.2.3</logback.version>
+        <commons-lang3.version>3.10</commons-lang3.version>
+        <commons-io.version>2.6</commons-io.version>
     </properties>
 
 <!--    <repositories>
@@ -96,23 +101,23 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.10</version>
+            <version>${commons-lang3.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.6</version>
+            <version>${commons-io.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>3.0.0-SNAPSHOT</version>
+            <version>${springfox.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0-SNAPSHOT</version>
+            <version>${springfox.version}</version>
         </dependency>
 <!--        <dependency>
             <groupId>io.springfox</groupId>
@@ -152,7 +157,7 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-spring-webflux</artifactId>
-            <version>3.0.0-SNAPSHOT</version>
+            <version>${springfox.version}</version>
         </dependency>
 <!--
         <dependency>
@@ -165,23 +170,34 @@
         <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
-            <version>1.10.11</version>
+            <version>${byte-buddy.version}</version>
         </dependency>
         <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy-agent</artifactId>
-            <version>1.10.11</version>
+            <version>${byte-buddy.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <version>2.3.0.RELEASE</version>
-        </dependency>
 <!--        <dependency>
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-core</artifactId>
             <version>2.0.5</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+<!--        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>-->
+        <!--<dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-access</artifactId>
+            <version>${logback.version}</version>
         </dependency>-->
     </dependencies>
 

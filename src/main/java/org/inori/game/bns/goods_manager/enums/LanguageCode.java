@@ -11,6 +11,7 @@ import javax.persistence.Converter;
 @AllArgsConstructor
 //@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum LanguageCode implements KeyValueEnum<Integer> {
+
     DEFAULT(0, "默认语言"),
     KOREAN(1, "韩语"),
     ENGLISH(2, "英语"),

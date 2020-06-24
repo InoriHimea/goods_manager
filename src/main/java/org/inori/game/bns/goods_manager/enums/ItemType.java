@@ -10,6 +10,7 @@ import javax.persistence.Converter;
 @AllArgsConstructor
 //@ToString
 public enum ItemType implements KeyValueEnum<Integer> {
+
     CHARGE_ITEM(1, "付费商品"),
     TIME_ITEM(2, "时限商品"),
     GAME_ITEM(3, "游戏商品"),
