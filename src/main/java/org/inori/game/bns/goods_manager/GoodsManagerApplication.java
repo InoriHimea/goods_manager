@@ -17,7 +17,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class GoodsManagerApplication {
 
     public static void main(String[] args) {
-        //ByteBuddyAgent.install();
         SwaggerAgent.getAgent().init();
         SpringApplication.run(GoodsManagerApplication.class, args);
     }
@@ -31,10 +30,10 @@ public class GoodsManagerApplication {
                     .subclass(ModelAttributeParameterExpander.class)
                     .method(ElementMatchers.is(propertyDescriptors))
                     .intercept(Advice.to(SwaggerModelAttributeAdvice.class))
-*//*                    .method(ElementMatchers.is(propertyDescriptors1))*//*
+                   .method(ElementMatchers.is(propertyDescriptors1))
                     //.intercept(FixedValue.value(Collections.emptySet()))
                     .make()
-*//*                    .saveIn(new File("D:/a"));*//*
+                   .saveIn(new File("D:/a"));
                     .load(ModelAttributeParameterExpander.class.getClassLoader())
                     .getLoaded();
         } catch (NoSuchMethodException e) {

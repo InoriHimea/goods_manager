@@ -66,7 +66,7 @@ public abstract class KeyValueEnumConverter<E extends Enum<E> & KeyValueEnum<T>,
         try {
             E[] e = (E[]) valuesMethod.invoke(null);
             return Arrays.stream(e)
-                    .filter(c -> c.getValue() == code)
+                    .filter(c -> c.getKey() == code)
                     .findFirst()
                     .orElse(e[0]);
         } catch (IllegalAccessException | InvocationTargetException e) {

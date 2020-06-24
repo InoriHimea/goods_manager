@@ -1,65 +1,35 @@
-<?xml version="1.0" encoding="UTF-8' ?»
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="30 seconds">
-    <property name="APP_NAME" value="UserManagerLog"/>
-        <!-- console -->
-<appender name="STDOUT class=" ch.qos.logback.core.ConsoleAppender">
-<layout class="ch.qos.logback.classic.Pattern!_ayout">
-<Pattern>%date %blue([%thread]) %highlight(%-5level) %logger - %boldMagenta(%msg%n)</Pattern>
-        j <i—
-<pattern>%date [%thread] %-5level %class{0}.%method - %msg%n</pattern>
-        —>
-        </layout>
-        </appender>
-<appender name=!lRolling2 class="ch.qos.logback.core.rolling.RollingFileAppender"»
-<file»..\logs\${APP_NAME}.log</file>
-<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy >
-<fileNamePattern»..\logs\${APP_NAME}\${APP_NAME}.%i.log.zip</fileNamePattern>
-<minlndex»l</minlndex>
-•	maxlndex» 10< / maxlndex»
-</rollingPolicy>
-<triggeringPolicy class=" ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy>
-<maxFileSize»10MB
-</maxFileSize>
-        </triggeringPolicy>
-<encoder>
-<pattern»%date [%thread] %highlight(%-5level) %logger - %boldMagenta(%msg%n)
-</pattern> </encoder>
-        </appender>
-<appender name="ArchiveTaskli class="
-          ch.qos.logback.core.ro! ling.RollingFileAppender"» <file»..\logs\${APP_NAME}\ArchiveTask.log</file>
-<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy >
-<fileNamePattern»..\logs\${APP_NAME}\${APP_NAME}\ArchiveTask.%i.log.zip</fileNamePattern>
-<minlndex»l</minlndex>
-•	maxlndex» 10< / maxlndex»
-</rollingPolicy>
-<triggeringPolicy class=" ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy>
-<maxFileSize»10MB
-</maxFileSize>
-        </triggeringPolicy>
-<encoder>
-<pattern»%date [%thread] %-5level %logger - %boldMagenta(%msg%n)
-</pattern>
-        </encoder>
-        </appender>
-<!—rootÉfôg^Jiâfiô&êfflWSappender— >
-<root levels DEBUG"»
-<appender-ref ref="STDOUT/>
-<!— <appender-ref ref="Rolling2"/>—>
-        </root>
-<loqqer name="cn.com.betasoft.mqr.loq.task.ArchiveTask" level=" DEBUG" additivity="false">
-wJ wJ V/WWWWVW' ^ ^ »
-<appender-ref ref="ArchiveTask"/»
-</logger>
+    <property name="APP_NAME" value="GoodsManager"/>
 
-<logger name="org.springframework" level="ERROR"/»
-<logger name="com.opensymphony" level="ERROR"/»
-<logger name="org.apache" level="ERR0R"/> dogger name="org.hibernate" level="ERROR"/»
-<logger name="org.apache.commons.httpclient" level="ERR0R"/» <logger name="net.sf.oval.internal" level=" ERROR"/»
-<logger name="net.sf.json" level="ERROR"/»
-<logger name="org.jbgss' level=" ERR0R"/> dogger name="freemarker.cache' level="ERR0R"/>
-<loqqer name="com.zanox.rabbiteasY" level="ERR0R"/> dogger name="druid.sql level="ERR0R" />
-<logger name="org.mybatis" level="ERR0R" />
-<logger name="com.netf lix" level="ERR0R 1 />
-<loqqer name="springfox.documentation" level="ERROR" />
-wJ wJ‭	‬A/VWWVMWW^
+    <!-- console -->
+    <appender name="STDOUT" class=" ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%date %blue([%thread]) %highlight(%-5level) %logger - %boldMagenta(%msg%n)</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="MainLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>.\logs\${APP_NAME}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>.\logs\${APP_NAME}\${APP_NAME}.%i.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>10</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class=" ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>20MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%date [%thread] %highlight(%-5level) %logger - %boldMagenta(%msg%n)</pattern>
+        </encoder>
+    </appender>
+
+    <root levels="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <logger name="org.springframework" level="ERROR" />
+    <logger name="org.apache" level="ERR0R"/>
+<!--    <logger name="org.hibernate" level="ERROR" />-->
+    <logger name="springfox.documentation" level="ERROR" />
 </configuration>

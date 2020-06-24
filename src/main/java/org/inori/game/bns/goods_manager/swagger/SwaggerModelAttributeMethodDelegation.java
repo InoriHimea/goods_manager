@@ -1,29 +1,23 @@
 package org.inori.game.bns.goods_manager.swagger;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.bytebuddy.asm.Advice;
-import org.apache.commons.lang3.reflect.FieldUtils;
-import sun.reflect.misc.FieldUtil;
 
 import java.beans.IntrospectionException;
-import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.PropertyPermission;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import static java.util.Collections.emptySet;
 
 /**
  * @author InoriHimea
  * @date 2020/6/10 15:29
  */
 @Slf4j
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class SwaggerModelAttributeMethodDelegation {
 
     //@Advice.OnMethodExit
