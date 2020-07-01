@@ -21,7 +21,7 @@ import java.time.format.DateTimeFormatter;
 @Controller
 @Slf4j
 @Api(value = "主页", tags = {"页面相关"}, hidden = true)
-public class HomeController {
+public class PageController {
 
     /**
      * 主页跳转，暂为swagger页面
