@@ -14,7 +14,7 @@ import javax.persistence.Converter;
 @AllArgsConstructor
 public enum SaleLimitType implements KeyValueEnum<Integer> {
 
-    ;
+    UNKNOWN_SALE_LIMIT_TYPE_1(1, "未知销售限制类型");
 
     private int key;
     private String value;

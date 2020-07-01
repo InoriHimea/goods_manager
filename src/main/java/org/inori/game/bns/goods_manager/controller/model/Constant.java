@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 public final class Constant {
 
     public static final String DEFAULT_ACCOUNT_NAME = "GoodsManagerUser";
+    public static final String DEFAULT_APP_GROUP_CODE = "bnsgrnTH";
 }

@@ -1,6 +1,7 @@
 package org.inori.game.bns.goods_manager.entity;
 
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import java.util.Objects;

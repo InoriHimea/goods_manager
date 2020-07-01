@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiParam;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.inori.game.bns.goods_manager.enums.AdditionalServiceType;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -19,7 +20,8 @@ public class AdditionalServiceItemsEntity {
     @Id@Column(name = "ItemId", insertable = false, updatable = false)
     private int itemId;
     @Basic@Column(name = "AdditionalServiceType")
-    private short additionalServiceType;
+    @Convert(converter = AdditionalServiceType.AdditionalServiceTypeConverter.class)
+    private AdditionalServiceType additionalServiceType;
 
     @JsonIgnore
     @OneToOne

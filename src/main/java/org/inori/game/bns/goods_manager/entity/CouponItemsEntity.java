@@ -1,45 +1,20 @@
 package org.inori.game.bns.goods_manager.entity;
 
+import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "CouponItems", schema = "dbo", catalog = "GoodsDb")
+@DynamicInsert
+@DynamicUpdate
 public class CouponItemsEntity {
+    @Id@Column(name = "ItemId", insertable = false, updatable = false)
     private int itemId;
+    @Basic@Column(name = "IssueId")
     private int issueId;
-
-    @Id
-    @Column(name = "ItemId")
-    public int getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
-
-    @Basic
-    @Column(name = "IssueId")
-    public int getIssueId() {
-        return issueId;
-    }
-
-    public void setIssueId(int issueId) {
-        this.issueId = issueId;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CouponItemsEntity that = (CouponItemsEntity) o;
-        return itemId == that.itemId &&
-                issueId == that.issueId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(itemId, issueId);
-    }
 }

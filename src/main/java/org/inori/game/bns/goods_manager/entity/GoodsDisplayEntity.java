@@ -1,6 +1,8 @@
 package org.inori.game.bns.goods_manager.entity;
 
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.inori.game.bns.goods_manager.enums.LanguageCode;
 
 import javax.persistence.*;
@@ -10,6 +12,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "GoodsDisplay", schema = "dbo", catalog = "GoodsDb")
 @IdClass(GoodsDisplayEntityPK.class)
+@DynamicUpdate
+@DynamicInsert
 public class GoodsDisplayEntity {
     @Id@Column(name = "GoodsId", insertable = false, updatable = false)
     private int goodsId;

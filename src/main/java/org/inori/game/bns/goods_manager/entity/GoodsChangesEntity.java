@@ -1,8 +1,12 @@
 package org.inori.game.bns.goods_manager.entity;
 
 import lombok.*;
+import org.inori.game.bns.goods_manager.controller.model.Constant;
+import org.inori.game.bns.goods_manager.enums.ChangeType;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Objects;
 
@@ -15,16 +19,17 @@ public class GoodsChangesEntity {
     @Basic@Column(name = "ChangeId")
     private int changeId;
     @Basic@Column(name = "ChangeType")
-    private short changeType;
+    @Convert(converter = ChangeType.ChangeTypeConverter.class)
+    private ChangeType changeType = ChangeType.UNKNOWN_CHANGE_TYPE_1;
     @Basic@Column(name = "Registered")
-    private Date registered;
+    private Date registered = Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
     @Basic@Column(name = "RegistrarAdminAccount")
-    private String registrarAdminAccount;
+    private String registrarAdminAccount = Constant.DEFAULT_ACCOUNT_NAME;
     @Basic@Column(name = "ChangeDescription")
     private String changeDescription;
     @Basic@Column(name = "GoodsAppGroupCode")
-    private String goodsAppGroupCode;
-    private Boolean isDisplayable;
+    private String goodsAppGroupCode = Constant.DEFAULT_APP_GROUP_CODE;
+    private Boolean isDisplayable = true;
 
     @Basic
     @Column(name = "IsDisplayable")

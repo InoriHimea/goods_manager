@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title th:text="${name}"></title>
 </head>
 <body>
-<h1>It works! <span th:text="${date}"></span></h1>
+    <h1>It works! <span id="time"></span></h1>
 </body>
+<script th:inline="javascript">
+    window.addEventListener("load", (e) => {
+        console.log("load事件" + e);
+        let es = new EventSource("/time");
+        es.addEventListener("message", (msg) => {
+            document.getElementById("time").innerText = msg.data;
+        })
+        es.addEventListener("open", (e) => {
+            console.log("打开一个连接" + e);
+        });
+        es.addEventListener("error", (e) => {
+            console.log("连接发生异常" + e)
+        });
+    });
+</script>
 </html>

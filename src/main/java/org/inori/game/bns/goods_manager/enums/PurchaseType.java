@@ -7,20 +7,23 @@ import org.inori.game.bns.goods_manager.converter.KeyValueEnumConverter;
 
 import javax.persistence.Converter;
 
+/**
+ * @author InoriHimea
+ * @date 2020/6/18 14:08
+ */
 @Getter
 @AllArgsConstructor
-//@ToString
-public enum GoodType implements KeyValueEnum<Integer> {
+public enum PurchaseType implements KeyValueEnum<Short> {
 
+    UNKNOWN_PURCHASE_TYPE_1((short) 1, "未知的物品购买类型1"),
+    UNKNOWN_PURCHASE_TYPE_2((short) 2, "未知的物品购买类型2");
 
-    UNKNOWN_GOOD_TYPE_3(3, "未知物品类型3"),
-    UNKNOWN_GOOD_TYPE_7(7, "未知物品类型7");
-
-    private int key;
+    private short key;
     private String value;
 
-    public Integer getKey() {
-        return key;
+    @Override
+    public Short getKey() {
+        return null;
     }
 
     @JsonValue
@@ -30,7 +33,7 @@ public enum GoodType implements KeyValueEnum<Integer> {
     }
 
     @Converter(autoApply = true)
-    public static class GoodTypeConverter extends KeyValueEnumConverter<GoodType, Integer> {
+    public static class PurchaseTypeConverter extends KeyValueEnumConverter<PurchaseType, Short> {
 
     }
 }

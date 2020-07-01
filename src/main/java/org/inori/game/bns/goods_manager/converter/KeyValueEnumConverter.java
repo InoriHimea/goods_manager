@@ -73,9 +73,5 @@ public abstract class KeyValueEnumConverter<E extends Enum<E> & KeyValueEnum<T>,
             log.error("参数异常", e);
             throw new RuntimeException("系统异常", e);
         }
-        /*return Stream.of(T.values())
-                .filter(c -> c.getKey() == code)
-                .findFirst()
-                .orElse(LanguageCode.DEFAULT);*/
     }
 }

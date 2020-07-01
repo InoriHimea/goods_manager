@@ -1,34 +1,39 @@
 package org.inori.game.bns.goods_manager.enums;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
 import org.inori.game.bns.goods_manager.converter.KeyValueEnumConverter;
 
 import javax.persistence.Converter;
 
+/**
+ * @author InoriHimea
+ * @date 2020/6/18 11:17
+ */
 @Getter
 @AllArgsConstructor
-//@ToString
-public enum DeliveryType implements KeyValueEnum<Integer> {
+public enum SaleStatus implements KeyValueEnum<Short> {
 
-    UNKNOWN_DELIVERY_1(1, "未知交付类型1"),
-    UNKNOWN_DELIVERY_2(2, "未知交付类型2");
+    NOT_FOR_SALE((short) 1, "不出售"),
+    FOR_SALE((short) 2, "出售");
 
-    private int key;
+    private short key;
     private String value;
 
-    public Integer getKey() {
+    @Override
+    public Short getKey() {
         return key;
     }
 
+    @JsonValue
     @Override
     public String toString() {
         return this.getValue();
     }
 
     @Converter(autoApply = true)
-    public static class DeliveryTypeConverter extends KeyValueEnumConverter<DeliveryType, Integer> {
+    public static class SaleStatusConverter extends KeyValueEnumConverter<SaleStatus, Short> {
 
     }
 }

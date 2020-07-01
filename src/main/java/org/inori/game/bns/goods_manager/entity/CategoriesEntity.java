@@ -13,6 +13,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
@@ -35,7 +37,7 @@ public class CategoriesEntity {
     private String categoryName;
     @Basic@Column(name = "AppGroupCode", updatable = false)
     @ApiModelProperty(value = "App组Code", hidden = true)
-    private String appGroupCode = "bnsgrnTH";
+    private String appGroupCode = Constant.DEFAULT_APP_GROUP_CODE;
     @ApiModelProperty("是否显示")
     private boolean isDisplayable = true;
     @Basic@Column(name = "DisplayOrder")
@@ -43,7 +45,7 @@ public class CategoriesEntity {
     private int displayOrder = 1;
     @Basic@Column(name = "Changed")
     @ApiModelProperty(value = "更改时间", hidden = true)
-    private Date changed = new Date();
+    private Date changed = Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
     @Basic@Column(name = "ChangerAdminAccount")
     @ApiModelProperty(value = "更改人账户", hidden = true)
     private String changerAdminAccount = Constant.DEFAULT_ACCOUNT_NAME;
@@ -56,11 +58,13 @@ public class CategoriesEntity {
     @Basic@Column(name = "CategoryData")
     @ApiModelProperty(value = "分类数据")
     private String categoryData = "{\"CategoryType\":[\"01\"]}";
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "parentCategoryId")
     @OrderBy("displayOrder asc")
     @ApiModelProperty("子节点")
     private List<CategoriesEntity> children;
+
     @Fetch (FetchMode.SUBSELECT)
     @OneToMany(mappedBy = "categoryId", cascade = CascadeType.ALL,
             fetch = FetchType.EAGER, targetEntity = CategoryDisplayEntity.class)

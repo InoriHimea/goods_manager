@@ -16,8 +16,8 @@ public class GoodsBasicPricesEntity {
     @Id@Column(name = "CurrencyGroupId")
     private short currencyGroupId = 71;
     @Basic@Column(name = "BasicSalePrice")
-    private BigDecimal basicSalePrice;
+    private BigDecimal basicSalePrice = BigDecimal.ZERO;
     @Basic@Column(name = "RefundFee")
-    private BigDecimal refundFee;
+    private BigDecimal refundFee = BigDecimal.ZERO;
 
 }
