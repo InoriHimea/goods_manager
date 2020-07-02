@@ -13,13 +13,16 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.authentication.HttpBasicServerAuthenticationEntryPoint;
+import org.springframework.security.web.server.authentication.RedirectServerAuthenticationSuccessHandler;
 import org.springframework.security.web.server.authentication.logout.RedirectServerLogoutSuccessHandler;
 import org.springframework.security.web.server.authentication.logout.ServerLogoutSuccessHandler;
 import org.springframework.security.web.server.csrf.CookieServerCsrfTokenRepository;
 
 import java.net.URI;
+import java.net.URISyntaxException;
 
 @Configuration
 @Slf4j
@@ -27,9 +30,11 @@ import java.net.URI;
 public class WebFluxSecurityConfig {
 
     @Bean
-    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
+    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) throws URISyntaxException {
         log.info("WebFlux Security begin");
         return http.authorizeExchange()
+                .pathMatchers("/actuator/**", "/instances")
+                .permitAll()
                 .pathMatchers(HttpMethod.POST)
                 .authenticated()
                 .pathMatchers(HttpMethod.DELETE)
@@ -53,7 +58,7 @@ public class WebFluxSecurityConfig {
                  //       .flatMap(m -> ServerWebExchangeMatcher.MatchResult.notMatch())
                  //       .switchIfEmpty(ServerWebExchangeMatcher.MatchResult.match()))
                 //.loginPage("/login")
-                //.authenticationSuccessHandler(new RedirectServerAuthenticationSuccessHandler("/"))
+                .authenticationSuccessHandler(loginSuccessHandler())
                 //.authenticationFailureHandler(new RedirectServerAuthenticationFailureHandler("/error"))
                 //.and()
                 //.logout()
@@ -63,9 +68,15 @@ public class WebFluxSecurityConfig {
                 .build();
     }
 
-    private ServerLogoutSuccessHandler logoutSuccessHandler(String url) {
+/*    private ServerLogoutSuccessHandler logoutSuccessHandler(String url) {
         RedirectServerLogoutSuccessHandler successHandler = new RedirectServerLogoutSuccessHandler();
         successHandler.setLogoutSuccessUrl(URI.create(url));
+        return successHandler;
+    }*/
+
+    private RedirectServerAuthenticationSuccessHandler loginSuccessHandler() throws URISyntaxException {
+        RedirectServerAuthenticationSuccessHandler successHandler = new RedirectServerAuthenticationSuccessHandler();
+        successHandler.setLocation(new URI("/"));
         return successHandler;
     }
 

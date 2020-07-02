@@ -1,5 +1,6 @@
 package org.inori.game.bns.goods_manager;
 
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import lombok.extern.slf4j.Slf4j;
 import org.inori.game.bns.goods_manager.agent.SwaggerAgent;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +15,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaAuditing
 @EnableJpaRepositories("org.inori.game.bns.goods_manager.repository")
 @Slf4j
+@EnableAdminServer
 public class GoodsManagerApplication {
 
     public static void main(String[] args) {
