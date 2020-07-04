@@ -39,11 +39,12 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:9527
+        url: http://localhost:9527/admin
       ui:
         title: 人类恶管理中心
         available-languages: zh
         brand: <img src="assets/img/icon-spring-boot-admin.svg"><span>${spring.boot.admin.ui.title}</span>
+      context-path: /admin
 
 server:
   port: 9527
@@ -53,6 +54,10 @@ management:
     web:
       exposure:
         include: '*'
+     # base-path: /admin/actuator
   endpoint:
     health:
       show-details: always
+  health:
+    diskspace:
+      path: C:\

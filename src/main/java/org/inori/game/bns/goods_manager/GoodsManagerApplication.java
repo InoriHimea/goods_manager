@@ -21,6 +21,7 @@ public class GoodsManagerApplication {
     public static void main(String[] args) {
         SwaggerAgent.getAgent().init();
         SpringApplication.run(GoodsManagerApplication.class, args);
+        System.out.println(System.getProperty("user.home"));
     }
 
     /*private static void swaggerParameterFinderChange() {

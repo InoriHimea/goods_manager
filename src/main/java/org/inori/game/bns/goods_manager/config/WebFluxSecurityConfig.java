@@ -1,5 +1,6 @@
 package org.inori.game.bns.goods_manager.config;
 
+import de.codecentric.boot.admin.server.config.AdminServerProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,11 +30,17 @@ import java.net.URISyntaxException;
 @EnableWebFluxSecurity
 public class WebFluxSecurityConfig {
 
+    private final String adminContextPath;
+
+    public WebFluxSecurityConfig(AdminServerProperties adminServerProperties) {
+        this.adminContextPath = adminServerProperties.getContextPath();
+    }
+
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) throws URISyntaxException {
         log.info("WebFlux Security begin");
         return http.authorizeExchange()
-                .pathMatchers("/actuator/**", "/instances")
+                .pathMatchers(adminContextPath + "/actuator/**", adminContextPath + "/instances")
                 .permitAll()
                 .pathMatchers(HttpMethod.POST)
                 .authenticated()
@@ -49,20 +56,20 @@ public class WebFluxSecurityConfig {
                 .csrf()
                 //.csrfTokenRepository(CookieServerCsrfTokenRepository.withHttpOnlyFalse())
                 .disable()
-                .httpBasic()
-                .authenticationEntryPoint(new HttpBasicServerAuthenticationEntryPoint())
-                .authenticationManager(new UserDetailsRepositoryReactiveAuthenticationManager(userDetailsService()))
-                .and()
                 .formLogin()
                 //.requiresAuthenticationMatcher(exchange -> Mono.just(exchange.getRequest())
                  //       .flatMap(m -> ServerWebExchangeMatcher.MatchResult.notMatch())
                  //       .switchIfEmpty(ServerWebExchangeMatcher.MatchResult.match()))
-                //.loginPage("/login")
-                .authenticationSuccessHandler(loginSuccessHandler())
+                .loginPage(adminContextPath + "/login")
+                //.authenticationSuccessHandler(loginSuccessHandler())
                 //.authenticationFailureHandler(new RedirectServerAuthenticationFailureHandler("/error"))
-                //.and()
-                //.logout()
-                //.logoutUrl("/logout")
+                .and()
+                .httpBasic()
+                .authenticationEntryPoint(new HttpBasicServerAuthenticationEntryPoint())
+                .authenticationManager(new UserDetailsRepositoryReactiveAuthenticationManager(userDetailsService()))
+                .and()
+                .logout()
+                .logoutUrl(adminContextPath + "/logout")
                 //.logoutSuccessHandler(logoutSuccessHandler("/login?logout"))
                 .and()
                 .build();
@@ -73,12 +80,6 @@ public class WebFluxSecurityConfig {
         successHandler.setLogoutSuccessUrl(URI.create(url));
         return successHandler;
     }*/
-
-    private RedirectServerAuthenticationSuccessHandler loginSuccessHandler() throws URISyntaxException {
-        RedirectServerAuthenticationSuccessHandler successHandler = new RedirectServerAuthenticationSuccessHandler();
-        successHandler.setLocation(new URI("/"));
-        return successHandler;
-    }
 
     @Bean
     public ReactiveUserDetailsService userDetailsService() {
