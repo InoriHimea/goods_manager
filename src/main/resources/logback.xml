@@ -32,6 +32,7 @@
     <logger name="org.springframework" level="ERROR" />
     <logger name="org.apache" level="ERR0R"/>
     <logger name="io.netty" level="INFO" />
+    <logger name="reactor.netty" level="INFO" />
     <logger name="org.hibernate" level="INFO" />
     <logger name="springfox.documentation" level="ERROR" />
     <logger name="io.swagger" level="ERROR" />

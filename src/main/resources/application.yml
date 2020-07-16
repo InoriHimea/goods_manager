@@ -9,10 +9,10 @@ spring:
       name: admin
       password: admin123
   datasource:
-    url: jdbc:sqlserver://123.129.217.172:1433;databaseName=GoodsDB
+    url:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     username: sa
-    password: FSmElsXuj3ls8Fq
+    password: ESmElsXuj3ls8Fq
     hikari:
       catalog: GoodsDB
   devtools:
@@ -36,7 +36,28 @@ spring:
         bootstrap-mode: deferred
     rest:
       enable-enum-translation: true
+  boot:
+    admin:
+      client:
+        url: http://localhost:9527/admin
+      ui:
+        title: 人类恶管理中心
+        available-languages: zh
+        brand: <img src="assets/img/icon-spring-boot-admin.svg"><span>${spring.boot.admin.ui.title}</span>
+      context-path: /admin
 
 server:
   port: 9527
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+     # base-path: /admin/actuator
+  endpoint:
+    health:
+      show-details: always
+  health:
+    diskspace:
+      path: C:\
